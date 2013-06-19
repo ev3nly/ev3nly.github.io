@@ -1,0 +1,64 @@
+<ng-include src="'views/nav.html'"></ng-include>
+<ng-include src="'views/action-bar.html'"></ng-include>
+
+<div class="row">
+  <div class="span12 offset0 content">
+    <div class="span8 offset0 main">
+      
+      <ng-include src="'views/history.html'" ng-show="showHistory"></ng-include>
+      <ng-include src="'views/cards.html'" ng-show="showCards"></ng-include>
+      <ng-include src="'views/bank-accounts.html'" ng-show="showBankAccounts"></ng-include>
+
+    </div>
+
+    <div class="span4 offset0 sidebar">
+
+      <div class="wallet">
+        <h3>Wallet</h3>
+        <table>
+          <tr ng-click="selectHistory()">
+            <td>Cash</td>
+            <td class="wallet-balance">$1.00</td>
+            <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td>
+            <ng-include src="'views/deposit-modal.html'"></ng-include>
+          </tr>
+
+          <tr ng-click="selectCards()">
+            <td>Cards</td>
+            <td><span class="cc-brand">VISA</span> 3773</td>
+            <td><button class="btn btn-mini" ng-click="showAddCardModal()">Change</button></td>
+            <ng-include src="'views/add-card-modal.html'"></ng-include>
+          </tr>
+
+          <tr ng-click="selectBankAccounts()">
+            <td>Banks</td>
+            <td><span class="wallet-brand">CHASE</span> 1290</td>
+            <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Change</button></td>
+            <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
+          </tr>
+        </table>
+      </div>
+
+      <!-- <div class="stats">
+        <h3>Stats</h3>
+        <table>
+          <tr>
+            <td>Member Since</td>
+            <td>Nov 2012</td>
+            <td>Volume</td>
+            <td>$10,000</td>
+          </tr>
+            <td>Payments</td>
+            <td>90</td>
+            <td>Requests</td>
+            <td>40</td>
+          <tr>
+          </tr>
+        </table>
+      </div> -->
+
+      <ng-include src="'views/bottom-nav.html'"></ng-include>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<nav class="navbar" ng-controller="NavCtrl">
+  <div class="navbar-inner">
+    <a class="brand" href="#/home">Evenly</a>
+    <ul class="nav pull-right">
+      <li ng-class="stateForItem('home')"><a href="#/home">Home</a></li>
+      <li ng-class="stateForItem('wallet')"><a href="#/wallet">Wallet</a></li>
+      <li ng-class="stateForItem('profile')"><a href="#/profile">{{name}}</a></li>
+    </ul>
+  </div>
+</nav>
