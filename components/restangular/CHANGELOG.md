@@ -1,3 +1,17 @@
+#0.8.3
+* Fixed bug with URLHandler. Now it uses local configuration as well
+* Added error interceptor
+* Fixed minor bugs
+
+
+#0.8.0
+* Big refactor to use scoped configurations
+
+#0.7.3
+* All configuration can be done via either `Restangular` or `RestangularProvider`
+* url field now is called getRestangularUrl
+* `id` configuration from `restangularFields` now accepts nested (dotted) properties
+
 #0.7.1
 * Added `defaultRequestParams` to set default request query parameters
 

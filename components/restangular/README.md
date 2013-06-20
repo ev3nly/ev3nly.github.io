@@ -6,6 +6,8 @@
 Restangular is an AngularJS service that will help you get, delete and update Restfull Resources with very few lines in the Client side. 
 This service is a perfect fit for any WebApp that uses Restfull Resources as the API for your application.
 
+**If you want to check a live example, [please click this link to plunkr](http://plnkr.co/edit/d6yDka?p=preview).** It's the same example as [Angular's Javascript Projects](http://angularjs.org/#wire-up-a-backend) but Restangularized.
+
 ## Differences with $resource
 
 Restangular has several features that distinguish it from $resource:
@@ -14,7 +16,7 @@ Restangular has several features that distinguish it from $resource:
 * **You can use this in $routeProvider.resolve**. As Restangular returns promises, you can return any of the methods in the `$routeProvider.resolve` and you'll get the real object injected into your controller if you want.
 * **It supports all HTTP methods**.
 * **You don't have to create one $resource object per request**. Each time you want to do a request, you can just do it using the object that was returned by Restangular. You don't need to create a new object for this.
-* **You don't have to write or remember ANY URL**. With $resource, you need to write the URL Tempalte. In here, you don't write any urls. You just write the name of the resource you want to fetch and that's it.
+* **You don't have to write or remember ANY URL**. With $resource, you need to write the URL Template. In here, you don't write any urls. You just write the name of the resource you want to fetch and that's it.
 * **It supports nested RestFUL resources**. If you have Nested RestFUL resources, Restangular can handle them for you. You don't have to know the URL, the path, or anything to do all of the HTTP operations you want.
 * **Restangular lets you create your own methods**. You can create your own methods to run the operation that you want. The sky is the limit.
 * **Support for wrapped responses**. If your response for a list of element actually returns an object with some property inside which has the list, it's very hard to use $resource. Restangular knows that and it makes it easy on you. Check out https://github.com/mgonto/restangular#my-response-is-actually-wrapped-with-some-metadata-how-do-i-get-the-data-in-that-case
@@ -33,12 +35,12 @@ Restangular.one('users').getList().then(function(users) {
 // This is a promise
 $scope.cars = $scope.user.getList('cars');
 
-// POST /users/123/sendMessage You've created your own method with the path & operation that you wanted
+// POST /users/123/sendMessage You've creat.ed your own method with the path & operation that you wanted
 $scope.user.sendMessage();
 
 // URL Building
-// GET to /user/123/messages/123/unread
-$scope.user.one('message', 123).all('unread').getList()
+// GET to /user/123/messages/123/from/123/unread
+$scope.user.one('message', 123).one('from', 123).getList('unread')
 
 
 ````
@@ -68,6 +70,20 @@ You can download this by:
 Restangular depends on Angular, Angular-Resources and (Underscore or Lodash).
 
 #Starter Guide
+
+## Quick configuration for Lazy Readers
+This is the quick configuration to bootstrap all. Read the rest of the documentation for further configuration and understanding
+
+````javascript
+angular.module('sample-app', ['restangular'])
+  .config(function(RestangularProvider) {
+    RestangularProvider.setBaseUrl("/api/v1");
+  });
+  
+angular.module('sample-app').controller('MainCtrl', function($scope, Restangular) {
+  $scope.projects = Restangular.all('projects').getList();
+});
+````
 
 ## Adding dependency to Restangular module in your app
 
@@ -118,7 +134,7 @@ baseAccounts.post(newAccount);
 Restangular.one('accounts', 123).one('buildings', 456).get()
 
 // Just ONE GET to /accounts/123/buildings
-Restangular.one('accounts', 123).all('buildings').getList()
+Restangular.one('accounts', 123).getList('buildings')
 
 //Here we use Promises then 
 // GET /accounts
@@ -200,7 +216,7 @@ account.customPOST("messages", {param: "myParam"}, {}, {name: "My Message"})
 
 ### Properties
 Restangular comes with defaults for all of it's properties but you can configure them. **So, if you don't need to configure something, there's no need to add the configuration.**
-All of this properties have setters so that you can change them.
+You can set all this configurations in **`RestangularProvider` to change the global configuration** or you can **use the withConfig method in Restangular service to create a new Restangular service with some scoped configuration**. Check the section on this later.
 
 #### baseUrl
 The base URL for all calls to your API. For example if your URL for fetching accounts is http://example.com/api/v1/accounts, then your baseUrl is `/api/v1`. The default baseUrl is an empty string which resolves to the same url that AngularJS is running, so you can also set an absolute url like `http://api.example.com/api/v1` if you need do set another domain.
@@ -221,6 +237,7 @@ This callback is a function that has 3 parameters:
 * **elem**: The element that has just been restangularized. Can be a collection or a single element.
 * **isCollection**: Boolean indicating if this is a collection or a single element.
 * **what**: The model that is being modified. This is the "path" of this resource. For example `buildings`
+* **Restangular**: The instanced service to use any of its methods
  
 This can be used together with `addRestangularMethod` (Explained later) to add custom methods to an element
 
@@ -248,6 +265,9 @@ The requestInterceptor is called before sending any data to the server. It's a f
 * **operation**: The operation made. It'll be the HTTP method used except for a `GET` which returns a list of element which will return `getList` so that you can distinguish them.
 * **what**: The model that's being requested. It can be for example: `accounts`, `buildings`, etc.
 * **url**: The relative URL being requested. For example: `/api/v1/accounts/123`
+
+#### errorInterceptor
+The errorInterceptor is called whenever there's an error. It's a function that receives the response as a parameter.
 
 #### listTypeIsArray
 
@@ -277,7 +297,7 @@ You can set default Query parameters to be sent with every request
 
 If all of your requests require to send some suffix to work, you can set it here. For example, if you need to send the format like `/users/123.json`you can add that `.json` to the suffix using the `setRequestSuffix`method
 
-### How to configure them
+### How to configure them globally
 You can configure this properties inside the config method of your app
 
 ````javascript
@@ -314,6 +334,36 @@ app.config(function(RestangularProvider) {
 
 ````
 
+### How to create a Restangular service with a different configuration from the global one
+Let's assume that for most requests you need some configuration (The global one), and for just a bunch of methods you need another configuration. In that case, you'll need to create another Restangular service with this particular configuration. This scoped configuration will inherit all defaults from the global one. Let's see how.
+
+````javascript
+// Global configuration
+app.config(function(RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://www.google.com');
+  RestangularProvider.setRequestSuffix('.json');
+});
+
+//Restangular service that uses Bing
+app.factory('BingRestangular', function(Restangular) {
+  return Restangular.withConfig(function(RestangularConfigurer) {
+    RestangularConfigurer.setBaseUrl('http://www.bing.com');
+  });
+});
+
+// Let's use them from a controller
+app.controller('MainCtrl', function(Restangular, BingRestangular) {
+  
+  // GET to http://www.google.com/users.json
+  // Uses global configuration
+  Restangular.all('users').getList()
+  
+  // GET to http://www.bing.com/users.json
+  // Uses Bing configuration which is based on Global one, therefore .json is added.
+  BingRestangular.all('users').getList()
+});
+````
+
 ## Methods description
 
 There're 3 sets of methods. Collections have some methods and elements have others. There're are also some common methods for all of them
@@ -323,6 +373,8 @@ This are the methods that can be called in the Restangular object.
 * **one(route, id)**: This will create a new Restangular object that is just a pointer to one element with the route `route` and the specified id.
 * **all(route)**: This will create a new Restangular object that is just a pointer to a list of elements for the specified path.
 * **copy(fromElement)**: This will create a copy of the from element so that we can modified the copied one.
+* **restangularizeElement(parent, element, route)**: Restangularizes a new element
+* **restangularizeCollection(parent, element, route)**: Restangularizes a new collection
 
 ### Element methods
 * **get([queryParams, headers])**: Gets the element. Query params and headers are optionals
@@ -336,7 +388,7 @@ This are the methods that can be called in the Restangular object.
 * **patch([queryParams, headers])**: Does a PATCH
 * **one(route, id)**: Used for RequestLess connections and URL Building. See section below.
 * **all(route)**: Used for RequestLess connections and URL Building. See section below.
-* **url()**: Gets the URL of the current object.
+* **getRestangularUrl()**: Gets the URL of the current object.
 
 ### Collection methods
 * **getList([queryParams, headers]): Gets itself again (Remember this is a collection)**.
@@ -346,7 +398,7 @@ This are the methods that can be called in the Restangular object.
 * **options: ([queryParams, headers])**: Does a OPTIONS
 * **patch([queryParams, headers])**: Does a PATCH
 * **putElement(idx, params, headers)**: Puts the element on the required index and returns a promise of the updated new array
-* **url()**: Gets the URL of the current object.
+* **getRestangularUrl()**: Gets the URL of the current object.
 
 ### Custom methods
 * **customGET(path, [params, headers])**: Does a GET to the specific path. Optionally you can set params and headers.
@@ -413,6 +465,9 @@ Restangular.one("accounts", 123).one("buildings", 456).one("spaces", 789).get()
 
 // POST /accounts/123/buildings/456/spaces
 Restangular.one("accounts", 123).one("buildings", 456).all("spaces").post({name: "New Space"});
+
+// DELETE /accounts/123/buildings/456
+Restangular.one("accounts", 123).one("buildings", 456).remove();
 ````
 
 ## Creating new Restangular Methods
@@ -545,7 +600,31 @@ RestangularProvider.setRestangularFields({
 ````
 
 
-#### **After getting some List, how do I add an object to the array?** **~~When I want to add a new element to the array, it gives me an error saying that push method doesn't exist~~**
+#### **How do I handle CRUD operations in a List returned by Restangular?**
+
+The best option for doing CRUD operations with a list, is to actually use the "real" list, and not the promise. It makes it easy to interact with it.
+
+Let's see an example :).
+
+````javascript
+// Here we use then to resolve the promise.
+Restangular.all('users').getList().then(function(users) {
+  $scope.users = users;
+  var userWithId = _.find(users, function(user) {
+    return user.id === 123;
+  });
+
+  userWithId.name = "Gonto";
+  userWithId.put();
+  
+  // ALternatively delete element from list when finished
+  userWithId.remove().then(function() {
+    // Updating the list and removing the user after the response is OK.
+    $scope.users = _.without($scope.users, userWithId);
+  });
+
+});
+````
 
 When you actually get some list by doing
 
@@ -554,15 +633,7 @@ $scope.owners = house.getList('owners')
 ````
 
 You're actually assigning a Promise to the owners value of the $scope. As Angular knows how to process promises, if in your view you do an ng-repeat of this $scope variable, results will be shown once the promise is resolved (Response arrived).
-So, I've enhanced this promise from Angular and added a push method which will return a new promise with the list with the new elements. So you should do something like this:
-
-````javascript
-// First
-$scope.owners = house.getList('owners');
-
-// Then after some ng-click to add an item
-$scope.owners = $scope.owners.push({name: "gonto"});
-````
+However, changes to that promise that you do from your HTML won't be seen in the scope, as it's not a real array. It's just a promise of an array.
 
 #### When I set baseUrl with a port, it's stripped out.
 
