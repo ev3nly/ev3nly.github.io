@@ -1,0 +1,35 @@
+<div class="static">
+  <nav class="static-nav">
+
+    <ul class="nav nav-list pull-right">
+      <li class="active"><a href="/story">STORY</a></li>
+      <li><a href="/blog">BLOG</a></li>
+      <li><a href="/contact">CONTACT</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/job">JOBS</a></li>
+    </ul>
+
+    <a class="brand evenly-brand pull-right" href="#/home">
+      <img src="/images/e07b8798.logo.png">
+      Evenly
+    </a>
+
+  </nav>
+
+  <div class="static-content">
+
+  </div>
+</div>
+
+<script>
+  $('.container').css('width', '100%');
+
+  var resize = function() {
+    var screenHeight = $(document).height();
+    $('.static').css('height', screenHeight);
+  }
+
+  window.onresize = resize;
+  resize();
+
+</script>

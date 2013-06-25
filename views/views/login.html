@@ -1,0 +1,33 @@
+<div class="login">
+  <div class="left">
+    <div class="evenly-brand">
+      <img src="/images/92c1e8db.logo-huge.png">
+      <p>Evenly</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <form class="login-form" name="form">
+      <div class="help-inline">Log in to Evenly</div>
+      <input type="text" ng-model="email" placeholder="Email">
+      <input type="password" ng-model="password" placeholder="Password">
+      <button class="btn btn-primary btn-block btn-embossed" ng-click="login(email, password)">Login</button>
+      <div class="help-inline">Don't have an account? 
+        <a>Sign up here.</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $('.container').css('width', '100%');
+
+    var resize = function() {
+      var screenHeight = $(document).height();
+      $('.login').css('height', screenHeight);
+    }
+
+    window.onresize = resize;
+    resize();
+
+  </script>
+</div>
