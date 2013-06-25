@@ -1,4 +1,4 @@
-<div class="login-page">
+<div class="login">
   <div class="left">
     <div class="evenly-brand">
       <img src="/images/92c1e8db.logo-huge.png">
@@ -7,7 +7,7 @@
   </div>
 
   <div class="right">
-    <form class="login" name="form">
+    <form class="login-form" name="form">
       <div class="help-inline">Log in to Evenly</div>
       <input type="text" ng-model="email" placeholder="Email">
       <input type="password" ng-model="password" placeholder="Password">
@@ -23,7 +23,7 @@
 
     var resize = function() {
       var screenHeight = $(document).height();
-      $('.login-page').css('height', screenHeight);
+      $('.login').css('height', screenHeight);
     }
 
     window.onresize = resize;
