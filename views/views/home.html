@@ -1,0 +1,33 @@
+<ng-include src="'views/nav.html'"></ng-include>
+
+<!-- <button class="btn" ng-click="test()">Don't Click Me!</button> -->
+
+<div class="row" id="foo">
+  <div class="span12 offset0 content">
+    <div class="span8 offset0 main">
+
+      <div class="story-balance">
+        <p class="story-balance-header">Cash Balance</p>
+        <p class="story-balance-value">${{$root.me.balance}}</p>
+      </div>
+
+      <div class="vertical-line">
+      
+        <div class="story" ng-repeat="story in newsfeed">
+          <div class="profile-picture"></div>
+          <p>{{story.subject.name}} {{story.verb}} {{story.target.name}}</p>
+          <p>for {{story.description}}</p>
+          <p>{{story.publishedString}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="span4 offset0 sidebar">
+      
+      <ng-include src="'views/bottom-nav.html'"></ng-include>
+
+    </div>
+  </div>
+</div>
