@@ -33,7 +33,7 @@
     <ul class="nav pull-right">
       <li ng-class="stateForItem('home')"><a href="#/home">Home</a></li>
       <li ng-class="stateForItem('wallet')"><a href="#/wallet">Wallet</a></li>
-      <li ng-class="stateForItem('profile')"><a href="#/profile">{{name}}</a></li>
+      <li ng-class="stateForItem('profile')"><a href="#/profile">{{$root.me.firstName()}}</a></li>
     </ul>
   </div>
 </nav>

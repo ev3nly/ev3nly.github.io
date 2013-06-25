@@ -17,7 +17,7 @@
         <table>
           <tr ng-click="selectHistory()">
             <td>Cash</td>
-            <td class="wallet-balance">$1.00</td>
+            <td class="wallet-balance">${{$root.me.balance}}</td>
             <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td>
             <ng-include src="'views/deposit-modal.html'"></ng-include>
           </tr>
