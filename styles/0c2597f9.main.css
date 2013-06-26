@@ -7663,20 +7663,21 @@ input.search-query {
   border-top-color: #d7d7d7;
   padding-top: 10px;
   margin-top: 10px;
+  width: 319px;
 }
-/* line 29, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
+/* line 30, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
 .bottom-nav div {
   margin: 10px;
 }
-/* line 31, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
+/* line 32, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
 .bottom-nav div a {
   width: 32%;
 }
-/* line 34, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
+/* line 35, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
 .bottom-nav div:last-child {
-  margin-left: 70px;
+  margin-left: 75px;
 }
-/* line 38, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
+/* line 39, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/nav.less */
 .bottom-nav a {
   display: inline-block;
   margin: 0;
@@ -7700,22 +7701,29 @@ input.search-query {
 }
 /* line 17, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-nav li.active a {
-  background: white;
-  color: #282828;
+  -webkit-border-top-left-radius: 100px;
+  -moz-border-radius-topleft: 100px;
+  border-top-left-radius: 100px;
+  -webkit-border-bottom-left-radius: 100px;
+  -moz-border-radius-bottomleft: 100px;
+  border-bottom-left-radius: 100px;
+  background: #8f8b8b;
+  color: #fafafa;
 }
-/* line 23, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 24, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-nav a {
   color: #8f8b8b;
 }
-/* line 27, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 28, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-nav a:hover {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-top-left-radius: 100px;
+  -moz-border-radius-topleft: 100px;
+  border-top-left-radius: 100px;
+  -webkit-border-bottom-left-radius: 100px;
+  -moz-border-radius-bottomleft: 100px;
+  border-bottom-left-radius: 100px;
 }
-/* line 32, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 33, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content {
   border-left-style: solid;
   border-left-width: 1px;
@@ -7728,37 +7736,37 @@ input.search-query {
   padding-left: 50px;
   padding-right: 200px;
 }
-/* line 44, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 45, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content h1 {
   font-size: 44px;
   margin-bottom: 50px;
 }
-/* line 49, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 50, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content p {
   font-size: 18px;
   color: #8f8b8b;
 }
-/* line 54, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 55, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content table {
   margin-top: -3px;
 }
-/* line 59, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 60, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content table tr td:first-child {
   padding-right: 10px;
 }
-/* line 63, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 64, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content table tr td {
   color: #8f8b8b;
   padding: 3px;
 }
-/* line 67, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 68, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content table tr td .btn {
   background: #8f8b8b;
   border-radius: 50%;
   width: 31px;
   height: 31px;
 }
-/* line 74, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
+/* line 75, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/static.less */
 .static .static-content table tr td .btn span {
   margin-left: -4px;
   margin-top: -5px;
@@ -7814,7 +7822,9 @@ input.search-query {
 }
 /* line 51, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/login.less */
 .login .login-form input {
-  width: 286px;
+  padding: 10px;
+  width: 300px;
+  height: 44px;
 }
 /* line 4, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/home.less */
 .vertical-line {
@@ -7977,8 +7987,10 @@ input.search-query {
   float: right;
   width: 400px;
   height: 500px;
+  background: url('/images/948d453a.white-iphone.png') no-repeat;
+  background-size: 100%;
 }
-/* line 63, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 64, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .iphone-content {
   background: #282828;
   width: 324px;
@@ -7988,7 +8000,7 @@ input.search-query {
   background: url('/images/b18491ac.dawwww.jpg') no-repeat;
   background-size: 100%;
 }
-/* line 76, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 77, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .btn-splash {
   -webkit-border-radius: 400px;
   -moz-border-radius: 400px;
@@ -8001,7 +8013,7 @@ input.search-query {
   color: #282828;
   font-weight: 800;
 }
-/* line 86, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 87, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .btn-splash-inverse {
   border-style: solid;
   border-width: 2px;
@@ -8009,30 +8021,30 @@ input.search-query {
   background: #282828;
   color: #fafafa;
 }
-/* line 92, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 93, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .brochures {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
 }
-/* line 97, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 98, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .brochure {
   vertical-align: top;
   width: 33%;
   padding: 10px;
   display: inline-block;
 }
-/* line 103, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 104, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .brochure h3 {
   color: #282828;
   font-size: 24px;
 }
-/* line 108, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 109, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .brochure p {
   color: #8f8b8b;
 }
-/* line 112, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 113, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 .brochure .splash-free {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -8046,7 +8058,7 @@ input.search-query {
   padding: 2px 5px;
   display: inline;
 }
-/* line 121, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 122, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav {
   border-top-style: solid;
   border-top-width: 1px;
@@ -8057,18 +8069,18 @@ nav.splash-bottom-nav {
   margin-top: 50px;
   padding-top: 10px;
 }
-/* line 128, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 129, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul {
   width: 100%;
   list-style: none;
   float: right;
 }
-/* line 133, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 134, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul li {
   float: left;
   padding: 0 20px;
 }
-/* line 137, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
+/* line 138, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul li a {
   color: #8f8b8b;
 }
@@ -8501,10 +8513,9 @@ body .cc-modal {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  width: 921px;
   background-color: #f4f3f0;
 }
-/* line 40, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/style.less */
+/* line 39, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/style.less */
 .main {
   -webkit-border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -8512,18 +8523,9 @@ body .cc-modal {
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomleft: 5px;
   border-bottom-left-radius: 5px;
-  background-color: #f9f8f6;
   border-right-style: solid;
   border-right-width: 1px;
   border-right-color: #d7d7d7;
-}
-/* line 49, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/style.less */
-.sidebar {
-  /*height: 100%;*/
-
-}
-/* line 53, /Users/seansu4you87/Dropbox/Desktop_dropbox/evenly-web/app/styles/style.less */
-.iphone-white {
-  background: url('/images/948d453a.white-iphone.png') no-repeat;
-  background-size: 100%;
+  min-height: 500px;
+  background-color: #f9f8f6;
 }
