@@ -1,0 +1,23 @@
+<div modal="depositShouldBeOpen" close="hideDepositModal()" options="opts" ng-controller="DepositCtrl">
+  <div class="modal-header">
+    <button class="close" ng-click="hideDepositModal()">×</button>
+    <h3>Deposit</h3>
+  </div>
+
+  <div class="modal-body">
+    <form name="form">
+      <span class="help-inline">I want to deposit </span><eve-amount></eve-amount>
+      <span class="help-inline">into my</span>
+    </form>
+
+    <div class="alert alert-error" ng-show="showErrors">
+      <p ng-show="form.number.$error.cardNumber">invalid number</p>
+      <p ng-show="form.cvc.$error.cardCVC">invalid cvc</p>
+      <p ng-show="form.expiry.$error.cardExpiry">invalid expiry</p>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="makeDeposit()" ng-class="classForButton()">Make Deposit</button>
+  </div>
+</div>

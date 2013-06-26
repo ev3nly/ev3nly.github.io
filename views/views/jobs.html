@@ -1,0 +1,22 @@
+<div class="static">
+  <ng-include src="'views/static-nav.html'"></ng-include>
+
+  <div class="static-content">
+    <h1>We're hiring!</h1>
+    <p>We want all the rockstars, ninjas, jedi masters, gurus, and any other stupid superlative you can think of!.</p>
+    <a class="btn btn-primary btn-huge btn-embossed" href="mailto:jobs@evenly.com">Interested in joining the team?  Send us a note.</a>
+  </div>
+</div>
+
+<script>
+  $('.container').css('width', '100%');
+
+  var resize = function() {
+    var screenHeight = $(document).height();
+    $('.static').css('height', screenHeight);
+  }
+
+  window.onresize = resize;
+  resize();
+
+</script>
