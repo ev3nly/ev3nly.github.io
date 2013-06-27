@@ -5,7 +5,7 @@
  if the key === false then no filtering will be performed
  * @return {array}
  */
-angular.module('ui.unique',[]).filter('unique', ['$parse', function ($parse) {
+angular.module('ui.unique',[]).filter('unique', function () {
 
   return function (items, filterOn) {
 
@@ -14,11 +14,14 @@ angular.module('ui.unique',[]).filter('unique', ['$parse', function ($parse) {
     }
 
     if ((filterOn || angular.isUndefined(filterOn)) && angular.isArray(items)) {
-      var hashCheck = {}, newItems = [],
-        get = angular.isString(filterOn) ? $parse(filterOn) : function (item) { return item; };
+      var hashCheck = {}, newItems = [];
 
       var extractValueToCompare = function (item) {
-        return angular.isObject(item) ? get(item) : item;
+        if (angular.isObject(item) && angular.isString(filterOn)) {
+          return item[filterOn];
+        } else {
+          return item;
+        }
       };
 
       angular.forEach(items, function (item) {
@@ -39,4 +42,4 @@ angular.module('ui.unique',[]).filter('unique', ['$parse', function ($parse) {
     }
     return items;
   };
-}]);
+});

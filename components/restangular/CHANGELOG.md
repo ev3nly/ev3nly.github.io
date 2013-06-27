@@ -1,19 +1,3 @@
-#0.8.9
-* Fix call to `isOverridenMethod` in `setMethodOverriders`.
-
-#0.8.8
-* Removed extra trailling slash for elements without ID. Thanks @cboden
-
-#0.8.7
-* Bugfix for Refactor
-
-#0.8.6
-* Ditched the buggy `$resource` and using `$http` inside :D
-
-#0.8.4
-* Fixed bug with defaultHttpFields for scoped configuration
-* Added `defaultHeaders`
-
 #0.8.3
 * Fixed bug with URLHandler. Now it uses local configuration as well
 * Added error interceptor

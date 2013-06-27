@@ -7,52 +7,125 @@
         <p>Evenly</p>
       </div>
       <div class="buttons pull-right">
-        <button class="btn btn-splash btn-splash-inverse">LEARN MORE</button>
+        <a href="#/story" class="btn btn-splash btn-splash-inverse">LEARN MORE</a>
         <a href="#/login" class="btn btn-splash">SIGN IN</a>
       </div>
     </nav>
 
-    <!-- <carousel interval="myInterval"> -->
     <div class="centerpiece">
+      
       <div class="tagline">
-        <h1>
-          Money Made Easy. <br>
-          Share Expenses With Evenly.
-        </h1>
+        <div id="tagline-carousel" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            
+            <div class="item active">
+              <h1>
+                Money Made Easy. <br>
+                Share Expenses With Evenly.
+              </h1>
 
-        <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
-          <i class="fui-facebook"></i>
-          Sign Up with Facebook
-        </button>
-        <a href="">Sign up with email instead.</a>
+              <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                <i class="fui-facebook"></i>
+                Sign Up with Facebook
+              </button>
+              <a href="">Sign up with email instead.</a>
+            </div>
+
+            <div class="item">
+              <h1>
+                We don't just help you send money, <br>
+                we help you collect it.
+              </h1>
+
+              <ul>
+                <li><p>Easily request money from 1 friend or 20 teammates.</p></li>
+                <li><p>Stop nagging friends, we'll help you send reminders until you're paid.</p></li>
+                <li><p>Track progress and deposit cash into your bank in seconds.</p></li>
+              </ul>
+
+              <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                <i class="fui-facebook"></i>
+                Sign Up with Facebook
+              </button>
+              <a href="">Sign up with email instead.</a>
+            </div>
+
+            <div class="item">
+              <h1>
+                Pay anyone, anywhere, <br>
+                at anytime.
+              </h1>
+
+              <ul>
+                <li><p>Friends don't need Evenly accounts to receive money</p></li>
+                <li><p>Pay anyone with an email address or phone number</p></li>
+                <li><p>Use Evenly on-the-go with our mobile app</p></li>
+              </ul>
+
+              <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                <i class="fui-facebook"></i>
+                Sign Up with Facebook
+              </button>
+              <a href="">Sign up with email instead.</a>
+            </div>
+
+            <div class="item">
+              <h1>
+                PayPal was built for your parents, <br>
+                Evenly is built for you.
+              </h1>
+
+              <ul>
+                <li><p>Beautiful, intuitive experience</p></li>
+                <li><p>Powerful tools that make sending and collecting money a breeze</p></li>
+                <li><p>Share the experience with friends and discover new ways to use Evenly</p></li>
+              </ul>
+
+              <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                <i class="fui-facebook"></i>
+                Sign Up with Facebook
+              </button>
+              <a href="">Sign up with email instead.</a>
+            </div>
+
+            <div class="item">
+              <h1>
+                Serious about great <br>
+                service and security.
+              </h1>
+
+              <ul>
+                <li><p>Live support avaiable around-the-clock</p></li>
+                <li><p>Bank-level encryption across our entire platform</p></li>
+                <li><p>24/7 transaction monitoring</p></li>
+              </ul>
+
+              <button href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                <i class="fui-facebook"></i>
+                Sign Up with Facebook
+              </button>
+              <a href="">Sign up with email instead.</a>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="iphone-white">
-        <!-- <slide ng-repeat="slide in slides" active="slide.active"> -->
-          <!-- <img ng-src="{{slide.image}}" style="margin:auto;"> -->
-          <!-- <div class="carousel-caption">
-            <h4>Slide {{$index}}</h4>
-            <p>{{slide.text}}</p>
-          </div> -->
-          <div class="iphone-content"></div>
-          <a class="carousel-control left">&lsaquo;</a>
-          <a class="carousel-control right">&rsaquo;</a>
-        <!-- </slide> -->
 
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+      <div class="iphone-white">
+        <carousel interval="carouselInterval">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <div class="iphone-content {{'splash-carousel-' + ($index + 1)}}"></div>
+          </slide>
+        </carousel>
       </div>
     </div>
-    <!-- </carousel> -->
   </div>
 
   <div class="brochures">
     <div class="brochures">
       <div ng-repeat="brochure in brochures" class="brochure">
         <h3>{{brochure.title}}</h3>
-        <!-- <img src="/images/b18491ac.dawwww.jpg"></img> -->
+        <div class="onboarding-{{$index + 1}}"></div>
         <p>{{brochure.description}}</p>
         <p class="splash-free">FREE</p>
       </div>
@@ -89,4 +162,14 @@
 
   window.onresize = resize;
   resize();
+
+  !function($) {
+    $(function() {
+      // carousel demo
+      $('#tagline-carousel').carousel({
+        interval: 7500,
+        pause: "false"
+      });
+    });
+  }(window.jQuery);
 </script>

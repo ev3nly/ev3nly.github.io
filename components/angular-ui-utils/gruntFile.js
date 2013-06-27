@@ -6,25 +6,27 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-karma');
+
+  grunt.loadTasks('./out/tasks/');
+
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'karma:unit']);
-  grunt.registerTask('build', ['concat:tmp', 'concat:modules', 'clean:rm_tmp', 'uglify']);
-  grunt.registerTask('build-doc', ['build', 'concat:html_doc', 'copy']);
+  grunt.registerTask('build', ['directory_names_concat', 'concat:tmp', 'concat:modules', 'clean:rm_tmp', 'uglify']);
+  grunt.registerTask('build-doc', ['build', 'concat:html_doc']);
   grunt.registerTask('server', ['karma:start']);
 
 
-  var testConfig = function(configFile, customOptions) {
+  var testConfig = function (configFile, customOptions) {
     var options = { configFile: configFile, singleRun: true };
-    var travisOptions = process.env.TRAVIS && { browsers: ['Firefox', 'PhantomJS'], reporters: ['dots'] };
+    var travisOptions = process.env.TRAVIS && { browsers: [ 'Firefox', 'PhantomJS'], reporters: ['dots'] };
     return grunt.util._.extend(options, customOptions, travisOptions);
   };
 
   // Project configuration.
   grunt.initConfig({
-    dist : 'components/angular-ui-docs',
+    dist: 'out/build',
     pkg: grunt.file.readJSON('package.json'),
     meta: {
       banner: ['/**',
@@ -34,11 +36,7 @@ module.exports = function (grunt) {
         ' * @license <%= pkg.license %>',
         ' */',
         ''].join('\n'),
-      view : {
-        humaName : "UI Utils",
-        repoName : "ui-utils"
-      },
-      destName : '<%= dist %>/build/<%= meta.view.repoName %>'
+      destName : '<%= dist %>/<%= pkg.name %>'
     },
     watch: {
       karma: {
@@ -48,19 +46,23 @@ module.exports = function (grunt) {
     },
     karma: {
       unit: testConfig('test/karma.conf.js'),
-      start: {configFile: 'test/karma.conf.js'}
+      start: {
+        configFile: 'test/karma.conf.js'
+      }
+    },
+    directory_names_concat: {
+      util: {
+        moduleName: "ui.utils",
+        prefix: 'ui.',
+        src: ['modules/*', '!modules/ie-shiv'],
+        dest: 'modules/utils.js'
+      }
     },
     concat: {
       html_doc: {
-        options: {
-          banner: ['<!-- Le content - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>',
-          '================================================== -->',
-          '<script>requirejs(["core/demo.js"]);</script>',
-          '<div id="utils" ng-non-bindable>'
-        ].join('\n'),
-        footer : '</div>'},
+        options: {banner: '<!-- Le content - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n================================================== -->\n'},
         src: [ 'modules/**/demo/index.html'],
-        dest: '<%= dist %>/demos.html'
+        dest: 'out/demos.html'
       },
       tmp: {
         files: {  'tmp/dep.js': [ 'modules/**/*.js', '!modules/utils.js', '!modules/ie-shiv/*.js', '!modules/**/test/*.js']}
@@ -86,7 +88,7 @@ module.exports = function (grunt) {
       rm_tmp: {src: ['tmp']}
     },
     jshint: {
-      files:['modules/**/*.js', 'gruntFile.js', 'test/**/*Spec.js', 'demo/**/*.js'],
+      files: ['modules/**/*.js', 'tasks/**/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -98,21 +100,6 @@ module.exports = function (grunt) {
         boss: true,
         eqnull: true,
         globals: {}
-      }
-    },
-    copy: {
-      main: {
-        files: [
-          {src: ['demo/demo.js'], dest: '<%= dist %>/core/demo.js', filter: 'isFile'}
-        ]
-      },
-      template : {
-        options : {processContent : function(content){
-          return grunt.template.process(content);
-        }},
-        files: [
-          {src: ['<%= dist %>/.tmpl/index.tmpl'], dest: '<%= dist %>/index.html'}
-        ]
       }
     }
   });

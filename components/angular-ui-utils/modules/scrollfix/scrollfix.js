@@ -7,10 +7,8 @@
 angular.module('ui.scrollfix',[]).directive('uiScrollfix', ['$window', function ($window) {
   'use strict';
   return {
-    require: '^?uiScrollfixTarget',
-    link: function (scope, elm, attrs, uiScrollfixTarget) {
-      var top = elm[0].offsetTop,
-          $target = uiScrollfixTarget && uiScrollfixTarget.$element || angular.element($window);
+    link: function (scope, elm, attrs) {
+      var top = elm.offset().top;
       if (!attrs.uiScrollfix) {
         attrs.uiScrollfix = top;
       } else {
@@ -21,8 +19,7 @@ angular.module('ui.scrollfix',[]).directive('uiScrollfix', ['$window', function 
           attrs.uiScrollfix = top + parseFloat(attrs.uiScrollfix.substr(1));
         }
       }
-
-      $target.bind('scroll.ui-scrollfix', function () {
+      angular.element($window).bind('scroll.ui-scrollfix', function () {
         // if pageYOffset is defined use it, otherwise use other crap for IE
         var offset;
         if (angular.isDefined($window.pageYOffset)) {
@@ -37,13 +34,6 @@ angular.module('ui.scrollfix',[]).directive('uiScrollfix', ['$window', function 
           elm.removeClass('ui-scrollfix');
         }
       });
-    }
-  };
-}]).directive('uiScrollfixTarget', [function () {
-  'use strict';
-  return {
-    controller: function($element) {
-      this.$element = $element;
     }
   };
 }]);
