@@ -2,20 +2,22 @@
   
   <div class="header">
     <nav>
-      <div class="evenly-brand">
-        <img src="/images/e07b8798.logo.png">
-        <p>Evenly</p>
-      </div>
-      <div class="buttons pull-right">
-        <a href="#/story" class="btn btn-splash btn-splash-inverse">LEARN MORE</a>
-        <a href="#/login" class="btn btn-splash">SIGN IN</a>
+      <div class="nav-content">
+        <div class="evenly-brand">
+          <img src="/images/e07b8798.logo.png">
+          <p>evenly</p>
+        </div>
+        <div class="buttons pull-right">
+          <a href="#/story" class="btn btn-splash btn-splash-inverse">LEARN MORE</a>
+          <a href="#/login" class="btn btn-splash">SIGN IN</a>
+        </div>
       </div>
     </nav>
 
     <div class="centerpiece">
       
       <div class="tagline">
-        <div id="tagline-carousel" class="carousel slide carousel-fade">
+        <div class="carousel slide carousel-fade">
           <div class="carousel-inner">
             
             <div class="item active">
@@ -112,12 +114,35 @@
       </div>
 
       <div class="iphone-white">
-        <carousel interval="carouselInterval">
-          <slide ng-repeat="slide in slides" active="slide.active">
-            <div class="iphone-content {{'splash-carousel-' + ($index + 1)}}"></div>
-          </slide>
-        </carousel>
+        <div class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <div class="iphone-content splash-carousel-1"></div>
+            </div>
+
+            <div class="item">
+              <div class="iphone-content splash-carousel-2"></div>
+            </div>
+
+            <div class="item">
+              <div class="iphone-content splash-carousel-3"></div>
+            </div>
+
+            <div class="item">
+              <div class="iphone-content splash-carousel-4"></div>
+            </div>
+
+            <div class="item">
+              <div class="iphone-content splash-carousel-5"></div>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <a class="carousel-control left">&lsaquo;</a>
+      <a class="carousel-control right">&rsaquo;</a>
     </div>
   </div>
 
@@ -150,6 +175,7 @@
       </ul>
     </div>
   </nav>
+
 </div>
 
 
@@ -166,9 +192,17 @@
   !function($) {
     $(function() {
       // carousel demo
-      $('#tagline-carousel').carousel({
+      $('.carousel').carousel({
         interval: 7500,
         pause: "false"
+      });
+
+      $('.carousel-control.left').click(function() {
+        $('.carousel').carousel('prev');
+      });
+
+      $('.carousel-control.right').click(function() {
+        $('.carousel').carousel('next');
       });
     });
   }(window.jQuery);

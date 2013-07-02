@@ -14244,59 +14244,68 @@ input.search-query {
 }
 /* line 15, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash .header nav {
+  background: #f9f7f6;
+}
+/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+.splash .header nav .nav-content {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
-.splash .header nav .evenly-brand {
+/* line 19, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+.splash .header nav .nav-content .evenly-brand {
   display: inline-block;
   margin: 10px;
 }
-/* line 20, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
-.splash .header nav .evenly-brand p {
-  color: #f9f7f6;
+/* line 22, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+.splash .header nav .nav-content .evenly-brand p {
+  color: #242d32;
   font-size: 24px;
 }
-/* line 29, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
 }
-/* line 36, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 39, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline {
   display: inline-block;
   height: 350px;
 }
-/* line 40, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline .item {
   width: 600px;
   height: 300px;
 }
-/* line 44, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 47, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline .item h1 {
   color: #f9f7f6;
   font-weight: normal;
   font-size: 32px;
 }
-/* line 50, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline .item a {
   display: block;
   color: #f9f7f6;
   margin-top: 10px;
 }
-/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 59, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline .item p {
   color: #f9f7f6;
 }
-/* line 60, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 63, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .tagline .item button,
 .centerpiece .tagline .item a {
   display: none;
 }
-/* line 66, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 69, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+.centerpiece .carousel-control {
+  font-size: 44px;
+  line-height: 32px;
+}
+/* line 77, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white {
   float: right;
   width: 300px;
@@ -14304,45 +14313,45 @@ input.search-query {
   background: url('/images/948d453a.white-iphone.png') no-repeat;
   background-size: 100%;
 }
-/* line 75, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .iphone-content {
   background: #242d32;
   width: 242px;
   height: 250px;
 }
-/* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 92, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .splash-carousel-1 {
   background: url('/images/0f97f0d0.splash-carousel-1.gif') no-repeat;
   background-size: 100%;
 }
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 93, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .splash-carousel-2 {
   background: url('/images/7272ec29.splash-carousel-2.gif') no-repeat;
   background-size: 100%;
 }
-/* line 83, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 94, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .splash-carousel-3 {
   background: url('/images/41662292.splash-carousel-3.gif') no-repeat;
   background-size: 100%;
 }
-/* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .splash-carousel-4 {
   background: url('/images/4d4ed63f.splash-carousel-4.jpg') no-repeat;
   background-size: 100%;
 }
-/* line 85, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 96, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .splash-carousel-5 {
   background: url('/images/0b1038da.splash-carousel-5.jpg') no-repeat;
   background-size: 100%;
 }
-/* line 87, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 98, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .carousel {
   width: 242px;
   height: 250px;
   margin-left: 29px;
   margin-top: 101px;
 }
-/* line 93, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 104, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .carousel .carousel-indicators {
   position: absolute;
   top: 330px;
@@ -14350,7 +14359,7 @@ input.search-query {
   margin-left: -25px;
   width: 50px;
 }
-/* line 102, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 113, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .iphone-white .carousel .carousel-control {
   display: none;
   z-index: 3000;
@@ -14359,7 +14368,7 @@ input.search-query {
   right: -150px;
   background-color: red;
 }
-/* line 114, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 125, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .btn-splash {
   -webkit-border-radius: 400px;
   -moz-border-radius: 400px;
@@ -14368,65 +14377,65 @@ input.search-query {
   border-radius: 400px;
   margin: 10px;
   width: 150px;
-  background: #f9f7f6;
-  color: #242d32;
+  background: #0073de;
+  color: #f9f7f6;
   font-weight: 800;
 }
-/* line 124, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 135, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .btn-splash-inverse {
   border-style: solid;
   border-width: 2px;
   border-color: #f9f7f6;
-  background: #242d32;
-  color: #f9f7f6;
+  background: white;
+  color: #242d32;
 }
-/* line 130, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 141, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochures {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
 }
-/* line 135, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 146, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure {
   vertical-align: top;
   width: 33%;
   padding: 10px;
   display: inline-block;
 }
-/* line 141, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 152, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure h3 {
   color: #242d32;
   font-size: 24px;
   text-align: center;
 }
-/* line 147, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 158, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure div {
   width: 200px;
   height: 300px;
   margin: 40px auto 0;
 }
-/* line 153, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 164, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-1 {
-  background: url('/images/60cbee2b.onboarding-1.png') no-repeat;
+  background: url('/images/6315aef1.onboarding-1.png') no-repeat;
   background-size: 100%;
 }
-/* line 154, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 165, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-2 {
-  background: url('/images/034bbb46.onboarding-2.png') no-repeat;
+  background: url('/images/7e325345.onboarding-2.png') no-repeat;
   background-size: 100%;
 }
-/* line 155, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 166, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-3 {
-  background: url('/images/3837914c.onboarding-3.png') no-repeat;
+  background: url('/images/7241da8d.onboarding-3.png') no-repeat;
   background-size: 100%;
 }
-/* line 157, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 168, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure p {
   color: #8f8b8b;
   text-align: center;
 }
-/* line 162, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 173, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .splash-free {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -14440,7 +14449,7 @@ input.search-query {
   margin: 0 auto;
   width: 60px;
 }
-/* line 171, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 182, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav {
   border-top-style: solid;
   border-top-width: 1px;
@@ -14451,18 +14460,18 @@ nav.splash-bottom-nav {
   margin-top: 50px;
   padding-top: 10px;
 }
-/* line 178, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 189, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul {
   width: 100%;
   list-style: none;
   float: right;
 }
-/* line 183, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 194, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul li {
   float: left;
   padding: 0 20px;
 }
-/* line 187, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+/* line 198, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 nav.splash-bottom-nav ul li a {
   color: #8f8b8b;
 }
