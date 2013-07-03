@@ -14941,16 +14941,17 @@ body .cc-modal {
   background-color: #f9f8f6;
 }
 /* line 52, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
-strong {
-  font-family: AvenirLTPro-Black !important;
-}
-/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 h1,
 h2,
 h3,
 h4,
 h5,
 p,
-a {
+a,
+td {
   font-family: AvenirLTPro-Book !important;
+}
+/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+strong {
+  font-family: AvenirLTPro-Black !important;
 }
