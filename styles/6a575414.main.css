@@ -6167,7 +6167,7 @@ a.badge:focus {
 }
 
 /* @license
- * MyFonts Webfont Build ID 2589500, 2013-06-26T15:43:05-0400
+ * MyFonts Webfont Build ID 2593806, 2013-07-03T01:14:26-0400
  * 
  * The fonts listed in this notice are subject to the End User License
  * Agreement(s) entered into by the website owner. All other parties are 
@@ -6175,36 +6175,29 @@ a.badge:focus {
  * 
  * You may obtain a valid license at the URLs below.
  * 
- * Webfont: Avenir 95 Black by Linotype
- * URL: http://www.myfonts.com/fonts/linotype/avenir/95-black/
+ * Webfont: Avenir Pro 45 Book by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir-pro/pro-45-book/
  * 
- * Webfont: Avenir 55 Roman by Linotype
- * URL: http://www.myfonts.com/fonts/linotype/avenir/55-roman/
+ * Webfont: Avenir Pro 95 Black by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir-pro/pro-95-black/
  * 
  * 
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=2589500
- * Webfonts copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2593806
+ * Webfonts copyright: Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted &#x00A9; 2007 Linotype GmbH, www.linotype.com. All rights reserved. This software is the property of Linotype GmbH, and may not be reproduced, 
  * 
  * © 2013 MyFonts Inc
 */
 
 
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/27833c");
+@import url("//hello.myfonts.net/count/27940e");
 
   
-@font-face {font-family: 'AvenirLTStd-Black';src: url('fonts/99f4ebad.27833C_0_0.eot');src: url('fonts/99f4ebad.27833C_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/415c5819.27833C_0_0.woff') format('woff'),url('fonts/387da56b.27833C_0_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirLTPro-Book';src: url('fonts/367db573.27940E_0_0.eot');src: url('fonts/367db573.27940E_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/2dfab329.27940E_0_0.woff') format('woff'),url('fonts/a5b55193.27940E_0_0.ttf') format('truetype');}
  
   
-@font-face {font-family: 'AvenirLTStd-Roman';src: url('fonts/7ca6c30f.27833C_1_0.eot');src: url('fonts/7ca6c30f.27833C_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/270a101d.27833C_1_0.woff') format('woff'),url('fonts/396449c8.27833C_1_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirLTPro-Black';src: url('fonts/ccd1720d.27940E_1_0.eot');src: url('fonts/ccd1720d.27940E_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/9d28d694.27940E_1_0.woff') format('woff'),url('fonts/3191cc44.27940E_1_0.ttf') format('truetype');}
  
-strong {
-  font-family: AvenirLTStd-Black !important;
-}
-
-h1, h2, h3, h4, h5, p, a {
-  font-family: AvenirLTStd-Roman !important;
-}
 .toast-title {
   font-weight: bold;
 }
@@ -13840,6 +13833,15 @@ input.search-query {
 /* Semantic Colors */
 /* Flat UI Overrides */
 /* Units */
+/* Fonts */
+/* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/config.less */
+.avenir-book {
+  font-family: AvenirLTPro-Book !important;
+}
+/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/config.less */
+.avenir-black {
+  font-family: AvenirLTPro-Black !important;
+}
 /* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/nav.less */
 .navbar-inner {
   background-color: #ffffff;
@@ -14937,4 +14939,18 @@ body .cc-modal {
   border-right-color: #d7d7d7;
   min-height: 500px;
   background-color: #f9f8f6;
+}
+/* line 52, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+strong {
+  font-family: AvenirLTPro-Black !important;
+}
+/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: AvenirLTPro-Book !important;
 }
