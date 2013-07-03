@@ -276,11 +276,19 @@
       });
 
       $('.carousel-control.left').click(function() {
+        // $('.carousel').carousel('cycle');
         $('.carousel').carousel('prev');
+        setTimeout(function() {
+          $('.carousel').carousel('pause');
+        }, 1000);
       });
 
       $('.carousel-control.right').click(function() {
+        // $('.carousel').carousel('cycle');
         $('.carousel').carousel('next');
+        setTimeout(function() {
+          $('.carousel').carousel('pause');
+        }, 1000);
       });
     });
   }(window.jQuery);
