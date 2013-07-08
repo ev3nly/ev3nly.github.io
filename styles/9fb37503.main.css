@@ -13906,33 +13906,33 @@ div[ng-controller="PendingCtrl"] {
   height: 100%;
   padding-top: 50px;
 }
-/* line 12, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 13, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav .evenly-brand {
   margin: 0 50px;
   font-size: 44px;
   color: #242d32;
 }
-/* line 18, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 19, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav li {
   width: 100px;
 }
-/* line 23, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 24, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav li.active a {
   font-family: AvenirLTPro-Black !important;
   background: white;
   color: #242d32;
 }
-/* line 30, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 31, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav a {
   color: #8f8b8b;
 }
-/* line 34, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 35, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav a:hover {
   background: white;
   color: #242d32;
   text-decoration: underline;
 }
-/* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body {
   border-left-style: solid;
   border-left-width: 1px;
@@ -13945,117 +13945,117 @@ div[ng-controller="PendingCtrl"] {
   padding-left: 50px;
   padding-right: 200px;
 }
-/* line 54, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 57, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body .static-content {
   max-width: 700px;
   min-height: 400px;
 }
-/* line 59, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 62, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body a.btn-huge {
   width: 100%;
   margin-top: 30px;
 }
-/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 67, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body h1 {
   font-size: 24px;
   font-weight: 200;
   color: #646464;
   text-align: justify;
 }
-/* line 71, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body h2 {
   font-size: 24px;
   color: #646464;
 }
-/* line 76, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 79, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body p {
   font-size: 18px;
   color: #8f8b8b;
   text-align: justify;
   margin: 20px 0;
 }
-/* line 83, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table {
   margin-top: -3px;
 }
-/* line 87, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td:first-child {
   padding-right: 10px;
 }
-/* line 91, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 94, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td {
   color: #8f8b8b;
   padding: 3px;
 }
-/* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 98, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td .btn {
   background: #0073de;
   border-radius: 50%;
   width: 31px;
   height: 31px;
 }
-/* line 102, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 105, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td .btn span {
   margin-left: -4px;
   margin-top: -5px;
 }
-/* line 110, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 113, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td:last-child a {
   color: #0073de;
 }
-/* line 111, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 114, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-body table tr td:last-child a:hover {
   text-decoration: underline;
 }
-/* line 117, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 120, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-footer {
   height: 200px;
-  width: 700px;
+  max-width: 700px;
 }
-/* line 123, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 126, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-footer img {
   padding-top: 50px;
   margin: auto;
   display: block;
 }
-/* line 136, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 139, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .jobs ul {
   width: 100%;
   list-style: none;
   margin: 0;
 }
-/* line 141, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 144, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .jobs ul li {
   display: inline;
   float: right;
   width: 50%;
 }
-/* line 146, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 149, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .jobs ul li p {
   margin: 5px 0;
 }
-/* line 153, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 156, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .jobs ul li:first-child {
   padding-left: 20px;
 }
-/* line 157, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 160, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .jobs ul li:last-child {
   padding-right: 20px;
 }
-/* line 164, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 167, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .faq h2 {
   font-size: 32px !important;
   margin-top: 50px;
 }
-/* line 169, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 172, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .faq h2:first-child {
   margin-top: 10px;
 }
-/* line 172, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 175, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .faq .faq-images-pay img {
   width: 24%;
 }
-/* line 177, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
+/* line 180, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .faq .faq-images-group-request,
 .faq .faq-images-feed {
   width: 33%;
