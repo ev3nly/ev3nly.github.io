@@ -14328,7 +14328,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 73, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .item .tagline-body {
-  max-width: 1425px;
+  max-width: 1450px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 50px;
@@ -14340,7 +14340,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 83, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .item .tagline-body .tagline-body-text .tagline-body-text-slide-1 {
-  width: 450px;
+  width: 425px;
   text-align: center;
   padding: 25% 0 20px 50px;
 }
@@ -14348,7 +14348,7 @@ div[ng-controller="PendingCtrl"] {
 .centerpiece .item .tagline-body .tagline-body-text ul {
   height: 281px;
   list-style-type: none;
-  width: 450px;
+  width: 425px;
 }
 /* line 102, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .item .tagline-body .tagline-body-text ul li {
@@ -14364,7 +14364,7 @@ div[ng-controller="PendingCtrl"] {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #d7d7d7;
-  width: 450px;
+  width: 425px;
   margin: 0 5%;
 }
 /* line 119, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
