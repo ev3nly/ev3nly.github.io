@@ -1,0 +1,62 @@
+<div class="static">
+  <ng-include src="'views/static-nav.html'"></ng-include>
+
+  <div class="static-body">
+    <div class="static-content jobs">
+      <h1>
+        We’re builders, focusing on unsolved problems and formulating solutions 
+        through beautiful design and great engineering. 
+      </h1>
+      <p>
+        With Evenly, we’re making everyday payment experiences simple and enjoyable. 
+        And in doing so, we’re helping our users better enjoy life’s moments. 
+        After all, weekend excursions, brunches, and concerts are more fun when 
+        you’re not worrying about money. 
+      </p>
+      <p>
+        Everyone has made a payment – everyone hates the experience. We aim to fix 
+        that. And it can’t be done alone. So we’re always looking for new teammates
+        who share our passion and ingenuity.  
+      </p> 
+
+      <ul class="jobs">
+        <li>
+          <h2>Passion</h2>
+          <p> 
+            Not everyone loves solving these problems, but we do. It drives us everyday. 
+            We can’t wait to get out of bed in the morning and code iOS animations, sketch 
+            wireframes, and draft user emails. And, most importantly, we use what 
+            we build daily; we are Evenly’s most fervent and critical users. 
+          </p>
+        </li>
+        <li>
+          <h2>Ingenuity</h2>
+          <p>
+            We’re a small team solving enormous challenges. From the beginning we’ve 
+            been pushed to become experts new fields. From marketing
+            and branding to design and legal, we’re eager to grow and tackle challenges
+            outside our comfort zones.
+          </p>
+        </li>
+      </ul>
+      
+      <a class="btn btn-primary btn-huge btn-embossed" href="mailto:jobs@evenly.com">Interested in joining the team?  Send us a note.</a>
+    </div>
+
+    <div class="static-footer">
+      <img src="/images/c3d347c2.logo-inverse-huge.png">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  var resize = function() {
+    var screenHeight = $(document).height();
+    $('.static').css('height', screenHeight);
+  }
+
+  window.onresize = resize;
+  resize();
+
+</script>
