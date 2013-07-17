@@ -2,6 +2,7 @@
   <div class="span12 offset0 content">
     <div class="span8 offset0 main">
       
+      <ng-include src="'views/action-bar.html'"></ng-include>
       <ng-include src="'views/history.html'" ng-show="showHistory"></ng-include>
       <ng-include src="'views/cards.html'" ng-show="showCards"></ng-include>
       <ng-include src="'views/bank-accounts.html'" ng-show="showBankAccounts"></ng-include>
@@ -12,7 +13,7 @@
 
       <div class="wallet">
         <h3>Wallet</h3>
-        <table>
+        <!-- <table>
           <tr ng-click="selectHistory()">
             <td>Cash</td>
             <td class="wallet-balance">${{$root.me.balance}}</td>
@@ -33,7 +34,46 @@
             <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Change</button></td>
             <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
           </tr>
-        </table>
+        </table> -->
+
+        <ul class="nav nav-list">
+          <li ng-class="{active: showHistory}">
+            <a href="" ng-click="selectHistory()">
+              <table>
+                <tr>
+                  <td>Cash</td>
+                  <td class="wallet-balance">${{$root.me.balance}}</td>
+                  <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td>
+                  <ng-include src="'views/deposit-modal.html'"></ng-include>
+                </tr>
+              </table>
+            </a>
+          </li>
+          <li ng-class="{active: showCards}">
+            <a href="" ng-click="selectCards()">
+              <table>
+                <tr>
+                  <td>Cards</td>
+                  <td><span class="cc-brand">VISA</span> 3773</td>
+                  <td><button class="btn btn-mini" ng-click="showAddCardModal()">Add</button></td>
+                  <ng-include src="'views/add-card-modal.html'"></ng-include>
+                </tr>
+              </table>
+            </a>
+          </li>
+          <li ng-class="{active: showBankAccounts}">
+            <a href="" ng-click="selectBankAccounts()">
+              <table>
+                <tr>
+                  <td>Banks</td>
+                  <td><span class="wallet-brand">CHASE</span> 1290</td>
+                  <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Add</button></td>
+                  <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
+                </tr>
+              </table>
+            </a>
+          </li>
+        </ul>
       </div>
 
       <!-- <div class="stats">

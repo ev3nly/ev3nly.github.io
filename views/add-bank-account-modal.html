@@ -5,13 +5,15 @@
   </div>
 
   <div class="modal-body">
-    <form name="form" class="cc-form">
+    <form name="form" class="ba-form">
       <input type="text" name="name" placeholder="Account Holder's Name" ng-model="bankAccount.name" required="">
 
       <input type="text" name="routingNumber" placeholder="Routing Number" pattern="\d*" ng-model="bankAccount.routingNumber" restrict-numeric="" required="">
       
       <input type="text" name="accountNumber" placeholder="Account Number" pattern="\d*" ng-model="bankAccount.accountNumber" restrict-numeric="" required="">
     </form>
+
+    <img src="/images/a6217773.check-explanation.png">
 
     <div class="alert alert-error" ng-show="showErrors">
       <p ng-show="form.number.$error.cardNumber">invalid number</p>
@@ -21,6 +23,6 @@
   </div>
 
   <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="addBankAccount()" ng-class="classForButton()">Add Card</button>
+    <button class="btn btn-primary" ng-click="addBankAccount()" ng-class="classForButton()">{{buttonTitle}}</button>
   </div>
 </div>

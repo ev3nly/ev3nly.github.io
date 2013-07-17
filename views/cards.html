@@ -1,21 +1,4 @@
 <div class="cc-list" ng-controller="CardsCtrl">
-  <!-- <table class="table">
-    <thead>
-      <tr>
-        <th>Active?</th>
-        <th>Card</th>
-        <th>Expires</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="cc" ng-repeat='card in cards'>
-        <td></td>
-        <td>{{card.brand}} {{card.last_four}}</td>
-        <td>{{card.expiration_month}}/{{card.expiration_year}}</td>
-      </tr>
-    </tbody>
-  </table> -->
-<!--  -->
   <div ng-repeat="card in cards">
     <div class="cc" ng-class="{selected:card.status =='active'}">
       <span><span class="cc-brand">{{card.brand}}</span> {{card.last_four}}</span>

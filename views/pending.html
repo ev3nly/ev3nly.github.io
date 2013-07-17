@@ -1,10 +1,10 @@
 <div class="pending-list">
-  <ul>
-    <li ng-repeat="request in pending" ng-click="presentRequest(request)">
-      <button>{{request.subject}} {{request.verb}} 
-        {{request.target}} 
-        {{request.amount && "$" || ""}}{{request.amount}} for 
-        {{request.directObject}}</button>
-    </li>
-  </ul>
+  <div class="pending-item" ng-repeat="request in pending" ng-click="presentRequest(request)">
+    <p>{{request.subject}} {{request.verb}} 
+      {{request.target}} 
+      {{request.amount && "$" || ""}}{{request.amount}} for 
+      {{request.directObject}}
+    </p>
+    <p>{{request.formattedDate.toString('MMM dd')}}</p>
+  </div>
 </div>

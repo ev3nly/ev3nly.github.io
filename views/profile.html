@@ -1,24 +1,26 @@
-<div class="row">
+<div class="row profile">
   <div class="span12 offset0 content">
     <div class="span8 offset0 main">
       
       <div class="settings" ng-controller="SettingsCtrl">
         <div class="settings-user">
-          <div class="profile-picture"></div>
+          <div class="profile-picture" style="background-image: url('{{$root.me.avatar_url}}')"></div>
           <div>
             <input type="text" ng-model="name">
             <input type="text" ng-model="email">
             <input type="text" ng-model="phoneNumber">
           </div>
-
-          <input type="password" placeholder="*******" ng-model="password">
-          <input type="password" placeholder="*******" ng-model="passwordConfirmation">
         </div>
 
         <button class="btn btn-embossed btn-huge" ng-class="{disabled: !saveProfileButtonEnabled()}" ng-click="saveProfile()">{{saveProfileButtonTitle()}}</button>
-        <!-- <button class="btn btn-embossed btn-huge">Change Password</button> -->
 
-        <div class="settings-fb">
+        <div class="settings-password">
+          <input type="password" placeholder="*******" ng-model="password">
+          <input type="password" placeholder="*******" ng-model="passwordConfirmation">
+          <button class="btn btn-embossed btn-huge">Change Password</button>
+        </div>
+
+        <!-- <div class="settings-fb">
           <div>
             <p>Connect with Facebook and make sending and receiving money even easier</p>
           </div>
@@ -28,7 +30,7 @@
               Connect with Facebook
             </button>
           </div>
-        </div>
+        </div> -->
 
         <div class="settings-notifications">
           <h4>Notification Settings</h4>
@@ -86,12 +88,13 @@
 
     </div>
 
-    <div class="span4 offset0 sidebar">
+    <div class="span4 offset0 sidebar profile-nav">
       
+      <h3>Profile</h3>
       <ul class="nav nav-list">
-        <li><a href="">Settings</a></li>
-        <li><a href="">Invite Your Friends</a></li>
-        <li><a href="">Log Out</a></li>
+        <li class="active"><a href="">Settings</a></li>
+        <!-- <li><a href="">Invite Your Friends</a></li> -->
+        <li><a href="" ng-click="logout()">Log Out</a></li>
       </ul>
 
       <ng-include src="'views/bottom-nav.html'"></ng-include>
