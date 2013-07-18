@@ -12,13 +12,21 @@
           <!-- <img src="{{story.subject.avatar_url}}"> -->
         </div>
         <div class="story-content">
-          <img class="story-type" src="{{story.imagePath}}">
+          <span ng-switch="" on="story.type">
+            <img class="story-type" src="/images/50627cdf.cash-left.png" ng-switch-when="left">
+            <img class="story-type" src="/images/4086b77a.cash-came.png" ng-switch-when="came">
+            <img class="story-type" src="/images/26ef00d6.cash-leaving.png" ng-switch-when="leaving">
+            <img class="story-type" src="/images/96e05107.cash-coming.png" ng-switch-when="coming">
+            <img class="story-type" src="/images/6219436f.cash-transfer.png" ng-switch-when="transfer">
+          </span>
           <p><strong>{{story.subject.name}}</strong> {{story.verb}} <strong>{{story.target.name}} for {{story.description}}</strong></p>
           <!-- <p>for {{story.description}}</p> -->
           <p class="story-published">
             {{story.publishedString}} &middot; 
-            <a class="heart" href="" ng-click="heartPressed(story)">
-              <img src="{{heartImage(story)}}"> {{storyLikesString(story)}}
+            <a class="btn-heart" href="" ng-click="heartPressed(story)">
+              <img src="/images/47a36de3.heart.png" ng-hide="storyLikedByUser(story, $root.me.id)">
+              <img src="/images/6dfb95a8.heart-red.png" ng-show="storyLikedByUser(story, $root.me.id)"> 
+              {{storyLikesString(story)}}
             </a>
           </p>
         </div>
