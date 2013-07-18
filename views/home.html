@@ -18,7 +18,7 @@
           <p class="story-published">
             {{story.publishedString}} &middot; 
             <a class="heart" href="" ng-click="heartPressed(story)">
-              <img src="{{heartImage(story)}}"> {{story.likesString()}}
+              <img src="{{heartImage(story)}}"> {{storyLikesString(story)}}
             </a>
           </p>
         </div>
