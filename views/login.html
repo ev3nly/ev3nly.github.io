@@ -10,16 +10,20 @@
       <div class="help-block">Log in to Evenly</div>
 
       <div class="control-group">
-        <input type="text" ng-model="email" placeholder="Email">
+        <input type="text" ng-model="email" placeholder="Email" required="">
       </div>
 
       <div class="control-group">
-        <input type="password" ng-model="password" placeholder="Password">
+        <input type="password" ng-model="password" placeholder="Password" required="">
       </div>
       
-      <button class="btn btn-primary btn-block btn-embossed" ng-click="login(email, password)">Login</button>
+      <button class="btn btn-primary btn-block btn-embossed" ng-click="login(email, password)" ng-class="{disabled: !validForm()}">{{buttonTitle}}</button>
       <div class="help-block">Don't have an account? 
         <a href="/#/signup">Sign up here.</a>
+      </div>
+
+      <div ng-show="serverError" class="alert alert-error">
+        <p>{{serverError}}</p>
       </div>
     </form>
   </div>

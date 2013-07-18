@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/1ea5cc19.main.css">
+    <link rel="stylesheet" href="styles/c688b655.main.css">
 
   </head>
   <body ng-app="evenlyApp">
@@ -26,13 +26,17 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <ng-include src="'views/nav.html'" ng-show="showNav"></ng-include>
+    <!-- <div ng-switch on="pageType"> -->
+      <!-- <ng-include src="'views/nav.html'" ng-show="showNav"></ng-include> -->
+    <!-- </div> -->
+
     <div class="container" ng-view=""></div>
 
     <script type="text/javascript" src="https://js.balancedpayments.com/v1/balanced.js"></script>
 
     <script src="components/moment/moment.js"></script>
     <script src="components/jquery/jquery.js"></script>
+    <script src="components/jquery.cookie/jquery.cookie.js"></script>
     <script src="components/toastr/toastr.js"></script>
     <script src="components/spin.js/spin.js"></script>
     <script src="components/angular/angular.js"></script>
@@ -68,7 +72,7 @@
     <!-- // <script src="components/flat-ui/UI/js/application.js"></script> -->
 
 
-    <script src="scripts/46d978f1.scripts.js"></script>
+    <script src="scripts/2f469db3.scripts.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

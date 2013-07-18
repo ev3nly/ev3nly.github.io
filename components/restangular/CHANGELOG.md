@@ -1,3 +1,33 @@
+#1.0.7
+* `baseUrl` can now be set either with or without ending `/` and it'll work
+
+#1.0.5
+* Several bug fixes
+* Added `parentless` configuration to ignore nested restful URLs
+
+#1.0.2
+* First final release
+* Added `one` and `all` to all collection methods
+* Added `fullResponse` for getting the full `$http` response in every call
+* Improved documentation on `addElemTransformer`
+* Configuration can be set globally on either `RestangularProvider` or `Restangular`
+
+#0.8.9
+* Fix call to `isOverridenMethod` in `setMethodOverriders`.
+
+#0.8.8
+* Removed extra trailling slash for elements without ID. Thanks @cboden
+
+#0.8.7
+* Bugfix for Refactor
+
+#0.8.6
+* Ditched the buggy `$resource` and using `$http` inside :D
+
+#0.8.4
+* Fixed bug with defaultHttpFields for scoped configuration
+* Added `defaultHeaders`
+
 #0.8.3
 * Fixed bug with URLHandler. Now it uses local configuration as well
 * Added error interceptor

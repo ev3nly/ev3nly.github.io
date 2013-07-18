@@ -1,3 +1,4 @@
+<ng-include src="'views/nav.html'"></ng-include>
 <div class="row profile">
   <div class="span12 offset0 content">
     <div class="span8 offset0 main">
@@ -12,13 +13,17 @@
           </div>
         </div>
 
-        <button class="btn btn-embossed btn-huge" ng-class="{disabled: !saveProfileButtonEnabled()}" ng-click="saveProfile()">{{saveProfileButtonTitle()}}</button>
-
         <div class="settings-password">
           <input type="password" placeholder="*******" ng-model="password">
           <input type="password" placeholder="*******" ng-model="passwordConfirmation">
-          <button class="btn btn-embossed btn-huge">Change Password</button>
+          <!-- <button class="btn btn-embossed btn-huge">Change Password</button> -->
+
+          <!-- <div class="alert alert-error" ng-show="true">
+            Passwords are not the same
+          </div> -->
         </div>
+
+        <button class="btn btn-embossed btn-huge" ng-class="{disabled: !saveProfileButtonEnabled()}" ng-click="saveProfile()">{{saveProfileButtonTitle()}}</button>
 
         <!-- <div class="settings-fb">
           <div>

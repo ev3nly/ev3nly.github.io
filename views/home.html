@@ -1,4 +1,5 @@
 <!-- <button class="btn" ng-click="test()">Don't Click Me!</button> -->
+<ng-include src="'views/nav.html'"></ng-include>
 
 <div class="row" id="foo">
   <div class="span12 offset0 content">
@@ -15,7 +16,10 @@
           <p><strong>{{story.subject.name}}</strong> {{story.verb}} <strong>{{story.target.name}} for {{story.description}}</strong></p>
           <!-- <p>for {{story.description}}</p> -->
           <p class="story-published">
-            {{story.publishedString}} &middot; <img src="/images/47a36de3.heart.png"> {{story.likes.count}}
+            {{story.publishedString}} &middot; 
+            <a class="heart" href="" ng-click="heartPressed(story)">
+              <img src="{{heartImage(story)}}"> {{story.likesString()}}
+            </a>
           </p>
         </div>
       </div>

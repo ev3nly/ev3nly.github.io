@@ -782,13 +782,13 @@ angular.module('ui.bootstrap.datepicker', [])
 
       if (attrs.min) {
         scope.$parent.$watch($parse(attrs.min), function(value) {
-          minDate = value ? new Date(value) : null;
+          minDate = new Date(value);
           refill();
         });
       }
       if (attrs.max) {
         scope.$parent.$watch($parse(attrs.max), function(value) {
-          maxDate = value ? new Date(value) : null;
+          maxDate = new Date(value);
           refill();
         });
       }
@@ -896,7 +896,7 @@ angular.module('ui.bootstrap.datepicker', [])
 
       scope.$watch('model', function ( dt, olddt ) {
         if ( angular.isDate(dt) ) {
-          selected = new Date(dt);
+          selected = angular.copy(dt);
         }
 
         if ( ! angular.equals(dt, olddt) ) {
@@ -2098,15 +2098,13 @@ angular.module('ui.bootstrap.rating', [])
   return {
     restrict: 'EA',
     scope: {
-      value: '=',
-      onHover: '&',
-      onLeave: '&'
+      value: '='
     },
     templateUrl: 'template/rating/rating.html',
     replace: true,
     link: function(scope, element, attrs) {
 
-      var maxRange = angular.isDefined(attrs.max) ? scope.$parent.$eval(attrs.max) : ratingConfig.max;
+      var maxRange = angular.isDefined(attrs.max) ? scope.$eval(attrs.max) : ratingConfig.max;
 
       scope.range = [];
       for (var i = 1; i <= maxRange; i++) {
@@ -2123,12 +2121,10 @@ angular.module('ui.bootstrap.rating', [])
           if ( ! scope.readonly ) {
               scope.val = value;
           }
-          scope.onHover({value: value});
       };
 
       scope.reset = function() {
           scope.val = angular.copy(scope.value);
-          scope.onLeave();
       };
       scope.reset();
 
@@ -2164,11 +2160,6 @@ angular.module('ui.bootstrap.tabs', [])
 
 .controller('TabsetController', ['$scope', '$element', 
 function TabsetCtrl($scope, $element) {
-
-  //Expose the outer scope for tab content compiling, so it can compile
-  //on outer scope like it should
-  this.$outerScope = $scope.$parent;
-   
   var ctrl = this,
     tabs = ctrl.tabs = $scope.tabs = [];
 
@@ -2227,7 +2218,6 @@ function TabsetCtrl($scope, $element) {
   return {
     restrict: 'EA',
     transclude: true,
-    replace: true,
     scope: {},
     controller: 'TabsetController',
     templateUrl: 'template/tabs/tabset.html',
@@ -2433,17 +2423,15 @@ function($parse, $http, $templateCache, $compile) {
   };
 }])
 
-.directive('tabContentTransclude', ['$compile', '$parse', function($compile, $parse) {
+.directive('tabContentTransclude', ['$parse', function($parse) {
   return {
     restrict: 'A',
     require: '^tabset',
     link: function(scope, elm, attrs, tabsetCtrl) {
-      var outerScope = tabsetCtrl.$outerScope;
       scope.$watch($parse(attrs.tabContentTransclude), function(tab) {
         elm.html('');
         if (tab) {
           elm.append(tab.contentElement);
-          $compile(tab.contentElement)(outerScope);
         }
       });
     }
@@ -2645,8 +2633,10 @@ angular.module('ui.bootstrap.timepicker', [])
 
       function addMinutes( minutes ) {
         var dt = new Date( selected.getTime() + minutes * 60000 );
-        selected.setHours( dt.getHours() );
-        selected.setMinutes( dt.getMinutes() );
+        if ( dt.getDate() !== selected.getDate()) {
+          dt.setDate( dt.getDate() - 1 );
+        }
+        selected.setTime( dt.getTime() );
         scope.model = new Date( selected );
       }
 
@@ -2707,7 +2697,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
     require:'ngModel',
     link:function (originalScope, element, attrs, modelCtrl) {
 
-      //SUPPORTED ATTRIBUTES (OPTIONS)
+      var selected;
 
       //minimal no of characters that needs to be entered before typeahead kicks-in
       var minSearch = originalScope.$eval(attrs.typeaheadMinLength) || 1;
@@ -2715,25 +2705,15 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
       //minimal wait time after last character typed before typehead kicks-in
       var waitTime = originalScope.$eval(attrs.typeaheadWaitMs) || 0;
 
-      //should it restrict model values to the ones selected from the popup only?
-      var isEditable = originalScope.$eval(attrs.typeaheadEditable) !== false;
-
-      //binding to a variable that indicates if matches are being retrieved asynchronously
-      var isLoadingSetter = $parse(attrs.typeaheadLoading).assign || angular.noop;
-
-      //a callback executed when a match is selected
-      var onSelectCallback = $parse(attrs.typeaheadOnSelect);
-
-      var inputFormatter = attrs.typeaheadInputFormatter ? $parse(attrs.typeaheadInputFormatter) : undefined;
-
-      //INTERNAL VARIABLES
-
-      //model setter executed upon match selection
-      var $setModelValue = $parse(attrs.ngModel).assign;
-
       //expressions used by typeahead
       var parserResult = typeaheadParser.parse(attrs.typeahead);
 
+      //should it restrict model values to the ones selected from the popup only?
+      var isEditable = originalScope.$eval(attrs.typeaheadEditable) !== false;
+
+      var isLoadingSetter = $parse(attrs.typeaheadLoading).assign || angular.noop;
+
+      var onSelectCallback = $parse(attrs.typeaheadOnSelect);
 
       //pop-up element used to display matches
       var popUpEl = angular.element('<typeahead-popup></typeahead-popup>');
@@ -2810,60 +2790,48 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
         var timeoutId;
 
         resetMatches();
-        if (inputValue && inputValue.length >= minSearch) {
-          if (waitTime > 0) {
-            if (timeoutId) {
-              $timeout.cancel(timeoutId);//cancel previous timeout
-            }
-            timeoutId = $timeout(function () {
+        if (selected) {
+          return inputValue;
+        } else {
+          if (inputValue && inputValue.length >= minSearch) {
+            if (waitTime > 0) {
+              if (timeoutId) {
+                $timeout.cancel(timeoutId);//cancel previous timeout
+              }
+              timeoutId = $timeout(function () {
+                getMatchesAsync(inputValue);
+              }, waitTime);
+            } else {
               getMatchesAsync(inputValue);
-            }, waitTime);
-          } else {
-            getMatchesAsync(inputValue);
+            }
           }
         }
 
         return isEditable ? inputValue : undefined;
       });
 
-      modelCtrl.$formatters.push(function (modelValue) {
-
-        var candidateViewValue, emptyViewValue;
+      modelCtrl.$render = function () {
         var locals = {};
-
-        if (inputFormatter) {
-
-          locals['$model'] = modelValue;
-          return inputFormatter(originalScope, locals);
-
-        } else {
-          locals[parserResult.itemName] = modelValue;
-
-          //it might happen that we don't have enough info to properly render input value
-          //we need to check for this situation and simply return model value if we can't apply custom formatting
-          candidateViewValue = parserResult.viewMapper(originalScope, locals);
-          emptyViewValue = parserResult.viewMapper(originalScope, {});
-
-          return candidateViewValue!== emptyViewValue ? candidateViewValue : modelValue;
-        }
-      });
+        locals[parserResult.itemName] = selected || modelCtrl.$viewValue;
+        element.val(parserResult.viewMapper(scope, locals) || modelCtrl.$viewValue);
+        selected = undefined;
+      };
 
       scope.select = function (activeIdx) {
         //called from within the $digest() cycle
         var locals = {};
         var model, item;
+        locals[parserResult.itemName] = item = selected = scope.matches[activeIdx].model;
 
-        locals[parserResult.itemName] = item = scope.matches[activeIdx].model;
-        model = parserResult.modelMapper(originalScope, locals);
-        $setModelValue(originalScope, model);
-
-        onSelectCallback(originalScope, {
+        model = parserResult.modelMapper(scope, locals);
+        modelCtrl.$setViewValue(model);
+        modelCtrl.$render();
+        onSelectCallback(scope, {
           $item: item,
           $model: model,
-          $label: parserResult.viewMapper(originalScope, locals)
+          $label: parserResult.viewMapper(scope, locals)
         });
 
-        //return focus to the input element if a mach was selected via a mouse click event
         element[0].focus();
       };
 
@@ -2952,6 +2920,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
       return query ? matchItem.replace(new RegExp(escapeRegexp(query), 'gi'), '<strong>$&</strong>') : query;
     };
   });
+
 angular.module("template/accordion/accordion-group.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/accordion/accordion-group.html",
     "<div class=\"accordion-group\">\n" +
@@ -3040,6 +3009,16 @@ angular.module("template/dialog/message.html", []).run(["$templateCache", functi
     "");
 }]);
 
+angular.module("template/modal/backdrop.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("template/modal/backdrop.html",
+    "<div class=\"modal-backdrop\"></div>");
+}]);
+
+angular.module("template/modal/window.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("template/modal/window.html",
+    "<div class=\"modal in\" ng-transclude></div>");
+}]);
+
 angular.module("template/pagination/pager.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/pagination/pager.html",
     "<div class=\"pager\">\n" +
@@ -3104,7 +3083,14 @@ angular.module("template/rating/rating.html", []).run(["$templateCache", functio
   $templateCache.put("template/rating/rating.html",
     "<span ng-mouseleave=\"reset()\">\n" +
     "	<i ng-repeat=\"number in range\" ng-mouseenter=\"enter(number)\" ng-click=\"rate(number)\" ng-class=\"{'icon-star': number <= val, 'icon-star-empty': number > val}\"></i>\n" +
-    "</span>");
+    "</span>\n" +
+    "");
+}]);
+
+angular.module("template/tabs/pane.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("template/tabs/pane.html",
+    "<div class=\"tab-pane\" ng-class=\"{active: selected}\" ng-show=\"selected\" ng-transclude></div>\n" +
+    "");
 }]);
 
 angular.module("template/tabs/tab.html", []).run(["$templateCache", function($templateCache) {
@@ -3112,6 +3098,19 @@ angular.module("template/tabs/tab.html", []).run(["$templateCache", function($te
     "<li ng-class=\"{active: active, disabled: disabled}\">\n" +
     "  <a ng-click=\"select()\" tab-heading-transclude>{{heading}}</a>\n" +
     "</li>\n" +
+    "");
+}]);
+
+angular.module("template/tabs/tabs.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("template/tabs/tabs.html",
+    "<div class=\"tabbable\">\n" +
+    "  <ul class=\"nav nav-tabs\">\n" +
+    "    <li ng-repeat=\"pane in panes\" ng-class=\"{active:pane.selected}\">\n" +
+    "      <a ng-click=\"select(pane)\">{{pane.heading}}</a>\n" +
+    "    </li>\n" +
+    "  </ul>\n" +
+    "  <div class=\"tab-content\" ng-transclude></div>\n" +
+    "</div>\n" +
     "");
 }]);
 
@@ -3125,7 +3124,7 @@ angular.module("template/tabs/tabset.html", []).run(["$templateCache", function(
     "    <div class=\"tab-pane\" \n" +
     "         ng-repeat=\"tab in tabs\" \n" +
     "         ng-class=\"{active: tab.active}\"\n" +
-    "         tab-content-transclude=\"tab\">\n" +
+    "         tab-content-transclude=\"tab\" tt=\"tab\">\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +

@@ -2,18 +2,33 @@
 **toastr** is a Javascript library for Gnome / Growl type non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.
 
 ## Current Version
-1.3.0
+1.3.1
 
 ## Demo
-Demo can be found at http://CodeSeven.github.com/toastr
+Demo can be found at http://codeseven.github.io/toastr/demo.html
+
+## CDNjs
+Toastr is hosted at CDN JS
+
+#### Debug
+- [//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/js/toastr.js](//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/js/toastr.js)
+- [//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/css/toastr.css](//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/css/toastr.css)
+
+#### Minified
+- [//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/js/toastr.min.js](//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/js/toastr.min.js) 
+- [//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/css/toastr.min.css](//cdnjs.cloudflare.com/ajax/libs/toastr.js/1.3.1/css/toastr.min.css)
+
 
 ## NuGet Gallery
 http://nuget.org/packages/toastr
 
+## [Bower](http://bower.io/)
+bower install toastr
+
 ## Quick start
 
 ###3 Easy Steps
-For other API calls, see the [demo](http://CodeSeven.github.com/toastr).
+For other API calls, see the [demo](http://codeseven.github.io/toastr/demo.html).
 
 1. Link to toastr.css `<link href="toastr.css" rel="stylesheet"/>`
 
