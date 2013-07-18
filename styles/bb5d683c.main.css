@@ -14361,7 +14361,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
 .story .story-content {
-  height: 80px;
+  min-height: 80px;
 }
 /* line 45, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
 .story .story-content p {
