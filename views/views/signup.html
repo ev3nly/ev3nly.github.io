@@ -1,0 +1,60 @@
+<div class="login">
+  <div class="left">
+    <div class="evenly-brand">
+      <img src="/images/f29f136b.logo-wordmark.png">
+    </div>
+  </div>
+
+  <div class="right">
+    <form class="login-form" name="form">
+      <div class="help-block">Sign Up</div>
+          
+      <div class="control-group" ng-class="form.name.$error">
+        <input type="text" ng-model="name" placeholder="Name" required="">
+        <span ng-show="false" class="help-inline">Inline help text</span>
+      </div>
+
+      <div class="control-group" ng-class="form.email.$error">
+        <input type="email" ng-model="email" placeholder="Email" required="">
+        <span ng-show="false" class="help-inline">Inline help text</span>
+      </div>
+
+      <div class="control-group" ng-class="form.phoneNumber.$error">
+        <input type="tel" ng-model="phoneNumber" placeholder="Phone Number" required="">
+        <span ng-show="false" class="help-inline">Inline help text</span>
+      </div>
+
+      <div class="control-group" ng-class="form.password.$error">
+        <input type="password" ng-model="password" placeholder="Password" required="">
+        <span ng-show="false" class="help-inline">Inline help text</span>
+      </div>
+
+      <div class="control-group">
+        <button class="btn btn-primary btn-block btn-embossed" ng-click="signup()" ng-class="{disabled: submitting}">{{buttonTitle}}</button>
+        <div class="help-block">Have an account? 
+          <a href="/#/login">Log in here.</a>
+        </div>
+      </div>
+
+      <div ng-show="serverErrors.length > 0" class="alert alert-error">
+        <p ng-repeat="serverError in serverErrors">
+          {{serverError}}
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+
+  var resize = function() {
+    var screenHeight = $(document).height();
+    $('.login').css('height', screenHeight);
+  }
+
+  window.onresize = resize;
+  resize();
+
+</script>
