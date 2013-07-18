@@ -1,0 +1,16 @@
+<div ng-controller="HistoryCtrl">
+  <div class="history-item" ng-repeat="item in history">
+    <div class="history-item-amount">
+      <p class="{{item.amountClass}}">{{item.amountString}}</p>
+    </div>
+    <div class="history-item-date">
+      <p ng-class="">{{item.formattedDate.toString('MMM dd').toUpperCase()}}</p>
+    </div>
+    <div class="history-item-content">
+      <p>{{item.topic}}</p>
+    </div>
+  </div>
+
+  <ng-include src="'views/evenly-footer.html'"></ng-include>
+
+</div>

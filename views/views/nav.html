@@ -1,0 +1,91 @@
+<nav class="navbar navbar-fixed-top" ng-controller="NavCtrl">
+  <div class="navbar-inner">
+    <div class="navbar-contents">
+      <a class="brand nav-brand" href="#/home">
+        <img src="/images/nav/ee897f79.nav-logo.png">
+        <p>{{'$' + $root.me.balance}}</p>
+      </a>
+
+      <ul class="nav pull-right">
+        <li ng-class="stateForItem('home')">
+          <a href="#/home">
+            <img src="/images/nav/65f77780.nav-home.png">
+            Home
+          </a>
+        </li>
+        <li ng-class="stateForItem('wallet')">
+          <a href="#/wallet">
+            <img src="/images/nav/b8a9575a.nav-wallet.png">
+            Wallet
+          </a>
+        </li>
+        <li ng-class="stateForItem('profile')">
+          <a href="#/profile">
+            <img src="/images/nav/f5e0e2d3.nav-profile.png">
+            {{$root.me.firstName()}}
+          </a>
+        </li>
+        <li ng-controller="PendingCtrl" class="pull-left">
+          <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom">
+              
+              <div class="btn-pending">
+                <p>{{pending.length}}</p>
+              </div>
+          </a>
+
+          <div modal="pendingSentRequestModalShouldBeOpen" close="close()" option="opts">
+            <div class="modal-header modal-header-sent-request">
+              <h3>Pending Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              {{currentRequest.subject}} {{currentRequest.verb}} 
+                      {{currentRequest.target}} 
+                      {{currentRequest.amount && "$" || ""}}{{currentRequest.amount}} for 
+                      {{currentRequest.directObject}}
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-danger cancel" ng-click="cancel(currentRequest)">Cancel</button>
+              <button class="btn btn-primary cancel" ng-click="remind(currentRequest)">Remind</button>
+            </div>
+          </div>
+
+          <div modal="pendingReceivedRequestModalShouldBeOpen" close="close()" option="opts">
+            <div class="modal-header modal-header-received-request">
+              <h3>Pending Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              {{currentRequest.subject}} {{currentRequest.verb}} 
+                      {{currentRequest.target}} 
+                      {{currentRequest.amount && "$" || ""}}{{currentRequest.amount}} for 
+                      {{currentRequest.directObject}}
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-danger cancel" ng-click="reject(currentRequest)">Reject</button>
+              <button class="btn btn-primary cancel" ng-click="pay(currentRequest)">Pay</button>
+            </div>
+          </div>
+
+          <div modal="pendingGroupRequestModalShouldBeOpen" close="close()" option="opts">
+            <div class="modal-header">
+              <h3>Pending Group Request</h3>
+            </div>
+
+            <div class="modal-body">
+              Group
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-warning cancel" ng-click="close()">Cancel</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
