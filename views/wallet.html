@@ -56,7 +56,7 @@
               <table>
                 <tr>
                   <td>Cards</td>
-                  <td><span class="cc-brand">VISA</span> 3773</td>
+                  <td><span ng-show="$root.activeCard" class="cc-brand">{{$root.activeCard.brand}}</span> {{$root.activeCard.last_four}}</td>
                   <td><button class="btn btn-mini" ng-click="showAddCardModal()">Add</button></td>
                   <ng-include src="'views/add-card-modal.html'"></ng-include>
                 </tr>
@@ -68,7 +68,7 @@
               <table>
                 <tr>
                   <td>Banks</td>
-                  <td><span class="wallet-brand">CHASE</span> 1290</td>
+                  <td><span ng-show="$root.activeBankAccount" class="wallet-brand">{{$root.activeBankAccount.displayName}}</span></td>
                   <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Add</button></td>
                   <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
                 </tr>
