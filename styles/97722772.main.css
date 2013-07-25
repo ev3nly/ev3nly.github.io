@@ -13925,7 +13925,7 @@ input.search-query {
 /* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/nav.less */
 .bottom-nav .bottom-nav-logo-container img {
   display: block;
-  width: 22px;
+  width: 34px;
   margin: auto;
   margin-top: -11px;
 }
@@ -14294,7 +14294,7 @@ div[ng-controller="PendingCtrl"] {
   font-size: 32px;
 }
 /* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .help-block:last-child {
+.login .login-form .hint {
   margin-top: 10px;
   padding: 0;
   font-size: 18px;
@@ -14302,7 +14302,7 @@ div[ng-controller="PendingCtrl"] {
   text-align: justify;
 }
 /* line 50, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .help-block:last-child a {
+.login .login-form .hint a {
   color: #0085d6;
   margin-left: 10px;
 }
@@ -15226,14 +15226,17 @@ body {
   border-right-style: solid;
   border-right-width: 1px;
   border-right-color: #d7d7d7;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #d7d7d7;
   background-color: white;
 }
-/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 50, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main,
 .sidebar {
   margin-top: 77px;
 }
-/* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 54, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main {
   border-right-style: solid;
   border-right-width: 1px;
@@ -15241,7 +15244,7 @@ body {
   min-height: 500px;
   background-color: white;
 }
-/* line 65, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 66, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 h1,
 h2,
 h3,
@@ -15255,7 +15258,7 @@ input,
 textarea {
   font-family: AvenirLTPro-Book !important;
 }
-/* line 69, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 strong {
   font-family: AvenirLTPro-Black !important;
 }
