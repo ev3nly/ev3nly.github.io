@@ -93,14 +93,16 @@
 
     </div>
 
-    <div class="span4 offset0 sidebar profile-nav">
+    <div class="span4 offset0 sidebar">
       
-      <h3>Profile</h3>
-      <ul class="nav nav-list">
-        <li class="active"><a href="">Settings</a></li>
-        <!-- <li><a href="">Invite Your Friends</a></li> -->
-        <li><a href="" ng-click="logout()">Log Out</a></li>
-      </ul>
+      <div class="profile-nav">
+        <h3>Profile</h3>
+        <ul class="nav nav-list">
+          <li class="active"><a href="">Settings</a></li>
+          <!-- <li><a href="">Invite Your Friends</a></li> -->
+          <li><a href="" ng-click="logout()">Log Out</a></li>
+        </ul>
+      </div>
 
       <ng-include src="'views/bottom-nav.html'"></ng-include>
 
