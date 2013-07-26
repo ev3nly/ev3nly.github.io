@@ -28,7 +28,7 @@
         <li ng-controller="PendingCtrl" class="pull-left">
           <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom">
               
-              <div class="btn-pending">
+              <div class="btn-pending" ng-class="{actionable: actionable}">
                 <p>{{pending.length}}</p>
               </div>
           </a>
