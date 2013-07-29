@@ -15249,41 +15249,52 @@ body .cc-modal {
 .confirmation p[ng-show="serverError"] {
   color: #ff6950;
 }
-/* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+/* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+.reset-password {
+  padding: 20px;
+}
+/* line 3, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
 .reset-password img {
   margin: 30px 0;
 }
-/* line 6, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+/* line 7, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
 .reset-password h1 {
   text-align: center;
   font-size: 32px;
 }
-/* line 11, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+/* line 12, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
 .reset-password p {
   text-align: center;
 }
-/* line 15, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
-.reset-password p[ng-show="serverError"] {
+/* line 16, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+.reset-password div.errors p {
   color: #ff6950;
+}
+/* line 20, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+.reset-password input {
+  height: 40px;
+}
+/* line 24, /Users/seansu4you87/Desktop/evenly-web/app/styles/reset-password.less */
+.reset-password input,
+.reset-password button {
+  margin-left: 8%;
+  margin-right: 8%;
+  width: 84%;
 }
 /* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
 .ios-download {
   padding: 20px;
 }
 /* line 4, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
-.ios-download img {
-  margin: 30px 0;
-}
-/* line 8, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
 .ios-download h1 {
   text-align: center;
   font-size: 32px;
 }
-/* line 13, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
+/* line 9, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
 .ios-download p {
   text-align: center;
 }
-/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
+/* line 13, /Users/seansu4you87/Desktop/evenly-web/app/styles/ios-download.less */
 .ios-download a.btn {
   width: 100%;
 }
