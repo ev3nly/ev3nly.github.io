@@ -12,11 +12,41 @@
     <meta property="twitter:account_id" content="1578199166">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/64ccad2f.main.css">
+    <link rel="stylesheet" href="styles/e9402c78.main.css">
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+        typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+        b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+        mixpanel.init("8025271500dfae2a28c360e58a7a9756");
+
+        var start = window.location.protocol.length + 2 + window.location.host.length;
+        var end = window.location.href.indexOf('?');
+        if (end <= 0) { end = window.location.href.length + 1; }
+        var path = window.location.href.substring(start, end);
+        path = path.substring(path.indexOf('#') + 1);
+        // alert(path);
+
+        mixpanel.track(path + ' page loaded', {
+            'host': window.location.host
+        });
+    </script>
+    <!-- end Mixpanel -->
+
+    <!-- disable logging -->
+    <script type="text/javascript">
+        // if (window.location.host.indexOf('evenly.com')) {
+        //     console.log = function() {};
+        //     console.debug = function() {};
+        //     console.warn = function() {};
+        // }
+    </script>
 
   </head>
   <body ng-app="evenlyApp">
     <fb app-id="454743374620870"></fb>
+
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -57,11 +87,22 @@
     <script src="scripts/cde67506.scripts.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+    <!--<script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42861659-1', 'evenly.com');
+      ga('send', 'pageview');
+
     </script>
   </body>
 </html>

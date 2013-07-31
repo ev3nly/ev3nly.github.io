@@ -8,5 +8,10 @@
     <button class="btn btn-danger btn-mini" ng-click="deleteCard(card.id)">Delete</button>
   </div>
 
+  <p ng-show="!cards.length">
+    All Information is sent over a 256-bit Secure Socket Layer (SSL), which is 
+    the same protection your bank provides. <strong>Click below to get started</strong>
+  </p>
+
   <button class="btn btn-primary" ng-click="showAddCardModal()">Add Card</button>
 </div>
