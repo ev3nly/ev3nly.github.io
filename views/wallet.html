@@ -15,37 +15,15 @@
 
       <div class="wallet">
         <h3>Wallet</h3>
-        <!-- <table>
-          <tr ng-click="selectHistory()">
-            <td>Cash</td>
-            <td class="wallet-balance">${{$root.me.balance}}</td>
-            <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td>
-            <ng-include src="'views/deposit-modal.html'"></ng-include>
-          </tr>
-
-          <tr ng-click="selectCards()">
-            <td>Cards</td>
-            <td><span class="cc-brand">VISA</span> 3773</td>
-            <td><button class="btn btn-mini" ng-click="showAddCardModal()">Change</button></td>
-            <ng-include src="'views/add-card-modal.html'"></ng-include>
-          </tr>
-
-          <tr ng-click="selectBankAccounts()">
-            <td>Banks</td>
-            <td><span class="wallet-brand">CHASE</span> 1290</td>
-            <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Change</button></td>
-            <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
-          </tr>
-        </table> -->
 
         <ul class="nav nav-list">
-          <li ng-class="{active: showHistory}">
+          <li>
             <a href="" ng-click="selectHistory()">
               <table>
                 <tr>
                   <td>Cash</td>
-                  <td class="wallet-balance">${{$root.me.balance}}</td>
-                  <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td>
+                  <td class="wallet-balance">${{$root.me.balanceString()}}</td>
+                  <!-- <td><button class="btn btn-mini" ng-click="showDepositModal()">Deposit</button></td> -->
                   <ng-include src="'views/deposit-modal.html'"></ng-include>
                 </tr>
               </table>
@@ -56,8 +34,9 @@
               <table>
                 <tr>
                   <td>Cards</td>
-                  <td><span ng-show="$root.activeCard" class="cc-brand">{{$root.activeCard.brand}}</span> {{$root.activeCard.last_four}}</td>
-                  <td><button class="btn btn-mini" ng-click="showAddCardModal()">Add</button></td>
+                  <!-- <td><span ng-show="$root.activeCard" class="cc-brand">{{$root.activeCard.brand}}</span></td> -->
+                  <td class="wallet-cc-number">{{$root.activeCard.last_four}}</td>
+                  <!-- <td><button class="btn btn-mini" ng-click="showAddCardModal()">Add</button></td> -->
                   <ng-include src="'views/add-card-modal.html'"></ng-include>
                 </tr>
               </table>
@@ -68,12 +47,18 @@
               <table>
                 <tr>
                   <td>Banks</td>
-                  <td><span ng-show="$root.activeBankAccount" class="wallet-brand">{{$root.activeBankAccount.displayName}}</span></td>
-                  <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Add</button></td>
+                  <!-- <td><span ng-show="$root.activeBankAccount" class="wallet-brand">{{$root.activeBankAccount.bank_name}}</span></td> -->
+                  <td class="wallet-bank-number">{{$root.activeBankAccount.account_number}}</td>
+                  <!-- <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Add</button></td> -->
                   <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
                 </tr>
               </table>
             </a>
+          </li>
+
+          <li>
+            <button class="btn btn-embossed" ng-class="{active: showHistory}" ng-click="selectHistory()">History</button>
+            <button class="btn btn-embossed" ng-click="showDepositModal()">Deposit</button>
           </li>
         </ul>
       </div>

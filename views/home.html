@@ -8,7 +8,7 @@
       <ng-include src="'views/action-bar.html'"></ng-include>
       
       <div class="story" ng-repeat="story in newsfeed">
-        <div class="story-profile-picture" style="background-image: url('{{story.subject.avatar_url}}')">
+        <div class="story-profile-picture" style="background-image: url('{{story.image_url || story.subject.avatar_url || defaultProfilePic(story.subject.id)}}')">
           <!-- <img src="{{story.subject.avatar_url}}"> -->
         </div>
         <div class="story-content">
@@ -19,8 +19,9 @@
             <img class="story-type" src="/images/96e05107.cash-coming.png" ng-switch-when="coming">
             <img class="story-type" src="/images/6219436f.cash-transfer.png" ng-switch-when="transfer">
           </span>
-          <p><strong>{{story.subject.name}}</strong> {{story.verb}} <strong>{{story.target.name}} for {{story.description}}</strong></p>
-          <!-- <p>for {{story.description}}</p> -->
+          <p ng-show="story.source_type != 'Hint'"><strong>{{story.subject.name}}</strong> and <strong>{{story.target.name}}</strong> shared {{story.description}}</p>
+          <p ng-show="story.source_type == 'Hint'"><strong>{{story.verb}}</strong></p>
+          <p ng-show="story.source_type == 'Hint'">{{story.description}}</p>
           <p class="story-published">
             {{story.publishedString}} &middot; 
             <a class="btn-heart" href="" ng-click="heartPressed(story)">

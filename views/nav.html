@@ -3,12 +3,12 @@
     <div class="navbar-contents">
       <a class="brand nav-brand" href="#/home">
         <img src="/images/nav/ee897f79.nav-logo.png">
-        <p>{{'$' + $root.me.balance}}</p>
+        <p>{{'$' + $root.me.balanceString()}}</p>
       </a>
 
       <ul class="nav">
         <li ng-controller="PendingCtrl" class="pull-left">
-          <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom">
+          <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom" ng-click="clickedPendingButton()">
               
               <div class="btn-pending" ng-class="{actionable: actionable}">
                 <p>{{pending.length}}</p>
@@ -22,15 +22,23 @@
             </div>
 
             <div class="modal-body">
-              {{currentRequest.subject}} {{currentRequest.verb}} 
-                      {{currentRequest.target}} 
-                      {{currentRequest.amount && "$" || ""}}{{currentRequest.amount}} for 
-                      {{currentRequest.directObject}}
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-coming">{{currentRequest.amount && "$" || ""}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
             </div>
 
             <div class="modal-footer">
-              <button class="btn btn-danger cancel" ng-click="cancel(currentRequest)">Cancel</button>
-              <button class="btn btn-primary cancel" ng-click="remind(currentRequest)">Remind</button>
+              <button class="btn pull-left" ng-click="cancel(currentRequest)">Cancel Request</button>
+              <button class="btn btn-primary" ng-click="remind(currentRequest)">Remind</button>
             </div>
           </div>
 
@@ -41,29 +49,50 @@
             </div>
 
             <div class="modal-body">
-              {{currentRequest.subject}} {{currentRequest.verb}} 
-                      {{currentRequest.target}} 
-                      {{currentRequest.amount && "$" || ""}}{{currentRequest.amount}} for 
-                      {{currentRequest.directObject}}
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || ""}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
             </div>
 
             <div class="modal-footer">
-              <button class="btn btn-danger cancel" ng-click="reject(currentRequest)">Reject</button>
-              <button class="btn btn-primary cancel" ng-click="pay(currentRequest)">Pay</button>
+              <button class="btn pull-left" ng-click="reject(currentRequest)">Deny Request</button>
+              <button class="btn btn-primary" ng-click="pay(currentRequest)">Pay Request</button>
             </div>
           </div>
 
           <div modal="pendingGroupRequestModalShouldBeOpen" close="close()" option="opts">
-            <div class="modal-header">
+            <div class="modal-header modal-header-received-request">
               <h3>Pending Group Request</h3>
+              <button class="close" ng-click="close()">×</button>
             </div>
 
             <div class="modal-body">
-              Group
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || "No Payment Tier Selected"}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
             </div>
 
             <div class="modal-footer">
-              <button class="btn btn-warning cancel" ng-click="close()">Cancel</button>
+              <button class="btn pull-left" ng-click="rejectGroupRequest(currentRequest)">Deny Request</button>
+              <button class="btn btn-primary" ng-click="payGroupRequest(currentRequest)">Pay Request</button>
             </div>
           </div>
         </li>

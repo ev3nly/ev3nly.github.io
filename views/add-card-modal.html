@@ -1,4 +1,4 @@
-<div modal="addCardShouldBeOpen" close="hideAddCardModal()" options="opts" ng-controller="AddCardCtrl">
+<div modal="addCardShouldBeOpen" close="hideAddCardModal()" options="addCardOpts" ng-controller="AddCardCtrl">
   <div class="modal-header">
     <button class="close" ng-click="hideAddCardModal()">×</button>
     <h3>Credit or Debit Card</h3>
@@ -9,9 +9,9 @@
       
       <div class="control-group">
         <input type="text" name="number" placeholder="Card Number" x-autocompletetype="cc-number" ng-model="card.number" format-card-number="" card-number="" restrict-numeric="" required="">
-      </div>
+      <!-- </div> -->
 
-      <div class="control-group">
+      <!-- <div class="control-group"> -->
         <input type="text" name="expiry" placeholder="MM/YY" x-autocompletetype="cc-exp" ng-model="card.expiry" format-card-expiry="" card-expiry="" restrict-numeric="" required="">
 
         <input type="text" name="cvc" placeholder="CVC" pattern="\d*" x-autocompletetype="cc-csc" ng-model="card.cvc" format-card-cvc="" card-cvc="" restrict-numeric="" autocomplete="off" required="">
