@@ -14565,7 +14565,6 @@ div[ng-controller="PendingCtrl"] {
   color: #f9f7f6;
   font-weight: 800;
   font-size: 13px;
-  display: none;
 }
 /* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .btn-splash-inverse {
@@ -14656,9 +14655,8 @@ div[ng-controller="PendingCtrl"] {
   width: 200px;
   display: none;
 }
-/* line 141, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
-.centerpiece .item .tagline-body .tagline-body-buttons button.btn-social-facebook,
-.centerpiece .item .tagline-body .tagline-body-buttons a {
+/* line 137, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
+.centerpiece .item .tagline-body .tagline-body-buttons button.disabled {
   display: none;
 }
 /* line 146, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
