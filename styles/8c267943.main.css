@@ -14448,9 +14448,10 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 75, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
 .ivy-evenly-help {
-  padding: 20px;
+  padding: 15px;
+  text-align: justify;
 }
-/* line 77, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
+/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
 .ivy-evenly-help a.btn {
   margin-top: 10px;
   display: block;
@@ -15229,49 +15230,53 @@ nav.splash-bottom-nav ul li a {
 .cc-brand {
   padding: 2px 4px;
 }
-/* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+.no-cards {
+  font-size: 15px;
+}
+/* line 47, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 body .cc-modal {
   width: 500px;
   margin-left: -250px;
 }
-/* line 48, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 52, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form {
   padding: 20px;
   height: 120px;
 }
-/* line 52, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form input {
   height: 50px;
   width: 260px;
 }
-/* line 57, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form input[ng-model="card.number"] {
   margin-right: 10px;
   background: #ffffff url(../../images/brands/d6da957f.generic.png) 97% 50% no-repeat;
   background-size: 25px;
 }
-/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 68, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form input[ng-model="card.expiry"] {
   width: 75px;
   margin-right: 10px;
 }
-/* line 69, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 73, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form input[ng-model="card.cvc"] {
   width: 55px;
 }
-/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .visa {
   background-image: url(../../images/brands/d3477de1.visa.png) !important;
 }
-/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .mastercard {
   background-image: url(../../images/brands/e9e00118.mastercard.png) !important;
 }
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .discover {
   background-image: url(../../images/brands/3708eb72.discover.png) !important;
 }
-/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
+/* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .amex {
   background-image: url(../../images/brands/693f9c14.amex.png) !important;
 }
@@ -15324,6 +15329,10 @@ body .ba-modal {
 .ba-form input {
   height: 50px;
   width: 100%;
+}
+/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/ba.less */
+.no-bank-accounts {
+  font-size: 15px;
 }
 /* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/confirmation.less */
 .confirmation img {

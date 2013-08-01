@@ -1,14 +1,14 @@
 <div class="cc-list" ng-controller="CardsCtrl">
   <div ng-repeat="card in cards">
     <div class="cc" ng-class="{selected:card.status =='active'}">
-      <span class="cc-brand">{{card.brand}}</span><span class="pull-right">{{card.last_four}}</span>
+      <span class="cc-brand">{{card.brand}}</span><span class="pull-right">**** **** **** {{card.last_four}}</span>
       <!-- <span>{{card.expiration_month}}/{{card.expiration_year}}</span> -->
     </div>
     <button class="btn btn-info btn-mini" ng-class="{disabled:card.status == 'active'}" ng-click="activateCard(card.id)">Activate</button>
     <button class="btn btn-danger btn-mini" ng-click="deleteCard(card.id)">Delete</button>
   </div>
 
-  <p ng-show="!cards.length">
+  <p class="no-cards" ng-show="!cards.length">
     All Information is sent over a 256-bit Secure Socket Layer (SSL), which is 
     the same protection your bank provides. <strong>Click below to get started</strong>
   </p>
