@@ -1,4 +1,9 @@
 <div class="pending-list">
+  <div class="pending-item" ng-click="presentConfirm()" ng-hide="$root.me.confirmed">
+    <div class="pending-profile-picture" style="background-image: url('/images/eff4a261.lock.png')">
+    </div>
+    <p>Please confirm your Evenly account</p>
+  </div>
   <div class="pending-item" ng-repeat="request in pending" ng-click="presentRequest(request)">
     <div class="pending-profile-picture" style="background-image: url('{{request.imageUrl}}')">
     </div>

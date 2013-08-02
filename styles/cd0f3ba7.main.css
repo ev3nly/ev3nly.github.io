@@ -13986,20 +13986,21 @@ div[ng-controller="PendingCtrl"] {
   margin: 0;
   padding: 10px 20px;
   cursor: pointer;
+  min-height: 80px;
 }
-/* line 20, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 21, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-item:hover {
   background: #8f8b8b;
 }
-/* line 22, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 23, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-item:hover p {
   color: #f9f7f6;
 }
-/* line 27, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 28, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-item:last-child {
   border-width: 0;
 }
-/* line 31, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .popover {
   top: 55px !important;
   left: -193px !important;
@@ -14013,7 +14014,7 @@ div[ng-controller="PendingCtrl"] {
 /*.popover.bottom .arrow {
   border-bottom-color: @green;
 }*/
-/* line 48, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-profile-picture {
   border-style: solid;
   border-width: 1px;
@@ -14026,29 +14027,29 @@ div[ng-controller="PendingCtrl"] {
   width: 60px;
   height: 60px;
   float: left;
-  margin-right: 10px;
+  margin-right: 20px;
   background: url('/images/b18491ac.dawwww.jpg') no-repeat;
   background-size: 100%;
   background-size: cover;
 }
-/* line 69, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-description {
   margin-top: -10px;
 }
-/* line 73, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-amount {
   position: absolute;
   right: 20px;
 }
-/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 79, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-amount-coming {
   color: #00c8b0;
 }
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 83, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-amount-leaving {
   color: #ff6950;
 }
-/* line 87, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 88, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-no-results p {
   font-size: 24px;
   width: 100%;
@@ -14056,7 +14057,7 @@ div[ng-controller="PendingCtrl"] {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-/* line 94, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+/* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-no-results img {
   margin: 0 144px;
 }

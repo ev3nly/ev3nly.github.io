@@ -11,9 +11,36 @@
           <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom" ng-click="clickedPendingButton()">
               
               <div class="btn-pending" ng-class="{actionable: actionable}">
-                <p>{{pending.length}}</p>
+                <p>{{pending.length + (!$root.me.confirmed && 1 || 0)}}</p>
               </div>
           </a>
+
+          <div modal="pendingConfirmModalShouldBeOpen" close="close()" option="opts">
+            <div class="modal-header">
+              <h3>Pending Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('/images/eff4a261.lock.png')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>Please confirm your Evenly Account</strong>
+                  <br>
+                  We've sent a confirmation email to {{$root.me.email}}.  Please
+                  click the link within that email to verify your address.
+                  <br>
+                  <br>
+                  Then come back and reload the page.  Thanks!
+                </span>
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-primary" ng-click="sendConfirmation()" ng-disabled="sendingConfirmation">{{sendingConfirmation && 'Sending...' || 'Resend Email'}}</button>
+            </div>
+          </div>
 
           <div modal="pendingSentRequestModalShouldBeOpen" close="close()" option="opts">
             <div class="modal-header modal-header-sent-request">
