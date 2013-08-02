@@ -69,7 +69,7 @@
             </div>
           </div>
 
-          <div modal="pendingGroupRequestModalShouldBeOpen" close="close()" option="opts">
+          <div modal="pendingReceivedGroupRequestModalShouldBeOpen" close="close()" option="opts">
             <div class="modal-header modal-header-received-request">
               <h3>Pending Group Request</h3>
               <button class="close" ng-click="close()">×</button>
@@ -94,6 +94,40 @@
               <button class="btn pull-left" ng-click="rejectGroupRequest(currentRequest)">Deny Request</button>
               <button class="btn btn-primary" ng-click="payGroupRequest(currentRequest)">Pay Request</button>
             </div>
+          </div>
+
+          <div modal="pendingSentGroupRequestModalShouldBeOpen" close="close()" option="opts">
+            <div class="modal-header modal-header-sent-request">
+              <h3>Pending Group Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <!-- <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || "No Payment Tier Selected"}}{{currentRequest.amount}}</span> -->
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
+              <p>
+                We're sorry!  The ability to manage Group Requests from the web 
+                is not here yet, but coming soon.  If you have an iPhone, you can
+                manage Group Requests from our app.  Just go to 
+                <a href="https://evenly.com/#/ios-download" target="_blank">evenly.com</a> to download
+                the app!
+              </p>
+            </div>
+
+            <!-- <div class="modal-footer">
+              <button class="btn pull-left" ng-click="rejectGroupRequest(currentRequest)">Deny Request</button>
+              <button class="btn btn-primary" ng-click="payGroupRequest(currentRequest)">Pay Request</button>
+            </div> -->
           </div>
         </li>
       </ul>

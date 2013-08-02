@@ -14048,6 +14048,18 @@ div[ng-controller="PendingCtrl"] {
 .pending-amount-leaving {
   color: #ff6950;
 }
+/* line 87, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+.pending-no-results p {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+/* line 94, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
+.pending-no-results img {
+  margin: 0 144px;
+}
 /* line 6, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav {
   float: left;
@@ -14463,43 +14475,46 @@ div[ng-controller="PendingCtrl"] {
 /* line 4, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet h3 {
   font-size: 24px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
-/* line 6, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 11, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet table {
   width: 100%;
 }
-/* line 12, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet table tr td {
   padding-left: 0;
 }
-/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 22, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet table tr td:first-child {
   font-size: 18px;
   color: #242d32;
 }
-/* line 22, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 27, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet table tr td:last-child {
   text-align: right;
 }
-/* line 28, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 33, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet li:last-child {
   margin-top: 10px;
 }
-/* line 31, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 36, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet li:last-child button {
   width: 112px;
 }
-/* line 35, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 40, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet li:last-child button:first-child {
   margin-right: 25px;
 }
-/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 46, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet-balance {
   font-size: 18px;
   font-weight: bold;
   color: #00c8b0;
 }
-/* line 47, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
+/* line 52, /Users/seansu4you87/Desktop/evenly-web/app/styles/wallet.less */
 .wallet-cc-number,
 .wallet-bank-number {
   color: #8f8b8b;
@@ -15409,10 +15424,16 @@ body {
   background: #f4f3f0;
 }
 /* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+a,
+a:active,
+a:focus {
+  outline: none;
+}
+/* line 45, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .offset0 {
   margin-left: 0px;
 }
-/* line 45, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .content {
   border-left-style: solid;
   border-left-width: 1px;
@@ -15425,12 +15446,12 @@ body {
   border-bottom-color: #d7d7d7;
   background-color: white;
 }
-/* line 54, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 58, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main,
 .sidebar {
   margin-top: 77px;
 }
-/* line 58, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 62, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main {
   border-right-style: solid;
   border-right-width: 1px;
@@ -15438,7 +15459,7 @@ body {
   min-height: 500px;
   background-color: white;
 }
-/* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 h1,
 h2,
 h3,
@@ -15452,7 +15473,7 @@ input,
 textarea {
   font-family: AvenirLTPro-Book !important;
 }
-/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 strong {
   font-family: AvenirLTPro-Black !important;
 }
