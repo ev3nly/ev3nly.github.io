@@ -1,7 +1,9 @@
 #Restangular
 
 [![Build Status](https://travis-ci.org/mgonto/restangular.png)](https://travis-ci.org/mgonto/restangular)
-
+<a href="https://twitter.com/intent/tweet?hashtags=&original_referer=http%3A%2F%2Fgithub.com%2F&text=Check+out+Restangular%2C+a+service+for+%23AngularJS+that+makes+it+easy+to+use+Res+APIs&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com%2Fmgonto%2Frestangular" target="_blank">
+  <img src="http://jpillora.com/github-twitter-button/img/tweet.png"></img>
+</a>
 
 Restangular is an AngularJS service that will help you get, delete and update Restfull Resources with very few lines in the Client side. 
 This service is a perfect fit for any WebApp that uses Restfull Resources as the API for your application.
@@ -36,12 +38,12 @@ Restangular.one('users').getList().then(function(users) {
 // This is a promise
 $scope.cars = $scope.user.getList('cars');
 
-// POST /users/123/sendMessage You've creat.ed your own method with the path & operation that you wanted
+// POST /users/123/sendMessage You've created your own method with the path & operation that you wanted
 $scope.user.sendMessage();
 
 // URL Building
 // GET to /user/123/messages/123/from/123/unread
-$scope.user.one('message', 123).one('from', 123).getList('unread')
+$scope.user.one('messages', 123).one('from', 123).getList('unread')
 
 
 ````
@@ -68,7 +70,7 @@ You can download this by:
 
 #Dependencies
 
-Restangular depends on Angular and (Underscore or Lodash). **angular-resource is no longer needed, now this uses `$http` instead of `$resource`**
+Restangular depends on Angular and (Underscore or Lodash). **angular-resource is no longer needed since version 1.0.6, now this uses `$http` instead of `$resource`**
 
 #Starter Guide
 
@@ -152,7 +154,7 @@ baseAccounts.getList().then(function (accounts) {
   // This is a regular JS object, we can change anything we want :) 
   firstAccount.name = "Gonto"
   
-  //If we wanted to keep the original as it's we can copy it to a new element
+  //If we wanted to keep the original as it is, we can copy it to a new element
   var editFirstAccount = Restangular.copy(firstAccount);
   editFirstAccount.name = "New Name";
   
@@ -321,7 +323,11 @@ You can now Override HTTP Methods. You can set here the array of methods to over
 
 #### defaultRequestParams
 
-You can set default Query parameters to be sent with every request
+You can set default Query parameters to be sent with every request and every method.
+
+Additionally, if you want to configure request params per method, you can use `requestParams` configuration similar to `$http`. For example `RestangularProvider.requestParams.get = {single: true}`.
+
+Supported method to configure are: remove, get, post, put, common (all)
 
 #### fullResponse
 
@@ -334,6 +340,10 @@ You can set default Headers to be sent with every request.
 #### requestSuffix
 
 If all of your requests require to send some suffix to work, you can set it here. For example, if you need to send the format like `/users/123.json`you can add that `.json` to the suffix using the `setRequestSuffix`method
+
+#### useCannonicalId
+
+You can set this to either `true` or `false`. By default it's false. If set to true, then the cannonical ID from the element will be used for URL creation (in DELETE, PUT, POST, etc.). What this means is that if you change the ID of the element and then you do a put, if you set this to true, it'll use the "old" ID which was received from the server. If set to false, it'll use the new ID assigned to the element.
 
 ### How to configure them globally
 
@@ -348,15 +358,17 @@ app.config(function(RestangularProvider) {
         return response.data;
     });
     
-    RestangularProvider.addElementTransformer('accounts', false, function(elem) {
-       elem.accountName = 'Changed';
-       return elem;
+    RestangularProvider.addElementTransformer('accounts', false, function(element) {
+       element.accountName = 'Changed';
+       return element;
     });
     
     RestangularProvider.setDefaultHttpFields({cache: true});
     RestangularProvider.setMethodOverriders(["put", "patch"]);
     
-    // In this case we configure that the id of each element will be the _id field and we change the Restangular route. We leave the default value for parentResource
+    // In this case we are maping the id of each element to the _id field.
+    // We also change the Restangular route. 
+    // The default value for parentResource remains the same.
     RestangularProvider.setRestangularFields({
       id: "_id",
       route: "restangularRoute"
@@ -366,15 +378,15 @@ app.config(function(RestangularProvider) {
     
     // Use Request interceptor
     RestangularProvider.setRequestInterceptor(function(element, operation, route, url) {
-      delete elem.name;
-      return elem;
+      delete element.name;
+      return element;
     });
     
-    // Or full request interceptor, its powerfull brother
+    // ..or use the full request interceptor, setRequestInterceptor's more powerful brother!
     RestangularProvider.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
-      delete elem.name;      
+      delete element.name;      
       return {
-        element: elem,
+        element: element,
         params: _.extend(params, {single: true}),
         headers: headers
       };
@@ -516,7 +528,7 @@ Sometimes, we have a lot of entities names with their ids and we just want to fe
 
 ````javascript
 
-var restangualrSpaces = Restangular.one("accounts",123).one("buildings", 456).all("spaces");
+var restangularSpaces = Restangular.one("accounts",123).one("buildings", 456).all("spaces");
 
 // This will do ONE get to /accounts/123/buildings/456/spaces
 restangularSpaces.getList()
@@ -547,6 +559,8 @@ RestangularProvider.addElementTransformer('buildings', false, function(building)
         // signature is (name, operation, path, params, headers, elementToPost)
         
         building.addRestangularMethod('evaluate', 'get', 'evaluate', undefined, {'myHeader': 'value'});
+        
+        return building;
 });
 
 RestangularProvider.addElementTransformer('users', true, function(user) {
@@ -554,25 +568,78 @@ RestangularProvider.addElementTransformer('users', true, function(user) {
         // signature is (name, operation, path, params, headers, elementToPost)
         
         user.addRestangularMethod('login', 'post', 'login');
+        
+        return user;
 });
 
 // Then, later in your code you can do the following:
 
 //GET to /buildings/123/evaluate?myParam=param with headers myHeader: value
-//Signature for this "custom created" methods is (params, headers, elem)
+
+//Signature for this "custom created" methods is (params, headers, elem) if it's a safe operation (GET, OPTIONS, etc.)
+// If it's an unsafe operation (POST, PUT, etc.), signature is (elem, params, headers).
+
 // If something is set to any of this variables, the default set in the method creation will be overrided
 // If nothing is set, then the defaults are sent
 Restangular.one('building', 123).evaluate({myParam: 'param'});
 
 //GET to /buildings/123/evaluate?myParam=param with headers myHeader: specialHeaderCase
+
 Restangular.one('building', 123).evaluate({myParam: 'param'}, {'myHeader': 'specialHeaderCase'});
 
-Restangular.all('users').login();
-
-
+// Here the body of the POST is going to be {key: value} as POST is an unsafe operation
+Restangular.all('users').login({key: value});
 
 ````
- 
+
+## Adding Custom Methods to Collections
+
+Create custom methods for your collection using Restangular.extendCollection(). This is an alias for:
+
+```
+  Restangular.addElementTransformer(route, true, fn)
+```
+
+### Example:
+```
+  // create methods for your collection
+  Restangular.extendCollection('accounts', function(collection) {
+    collection.totalAmount = function() {
+      // implementation here
+    };
+
+    return collection;
+  });
+
+  var accountsPromise = Restangular.all('accounts').getList();
+      
+  accountsPromise.then(function(accounts) {
+    accounts.totalAmount(); // invoke your custom collection method
+  });
+```
+
+## Adding Custom Methods to Models
+
+Create custom methods for your models using Restangular.extendModel(). This is an alias for:
+
+```
+  Restangular.addElementTransformer(route, false, fn)
+```
+
+### Example:
+```
+  Restangular.extendModel('accounts', function(model) {
+    model.prettifyAmount = function() {};
+    return model;
+  });
+
+  var accountPromise = Restangular.one('accounts', 1).get();
+  
+  accountPromise.then(function(account) {
+    account.prettifyAmount(); // invoke your custom model method
+  });
+```
+
 # FAQ
 
 #### **How can I handle errors?**
@@ -711,7 +778,14 @@ In order to get this done, you need to use the `responseExtractor`. You need to 
 ````javascript
 RestangularProvider.setResponseExtractor(function(response) {
   var newResponse = response;
-  newResponse.originalElement = angular.copy(response);
+  if (angular.isArray(response)) {
+    angular.forEach(newResponse, function(value, key) {
+      newResponse[key].originalElement = angular.copy(value);
+    });
+  } else {
+    newResponse.originalElement = angular.copy(response);
+  }
+
   return newResponse;
 });
 ````

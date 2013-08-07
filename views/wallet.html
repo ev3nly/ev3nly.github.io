@@ -57,7 +57,7 @@
           </li>
 
           <li>
-            <button class="btn btn-embossed" ng-class="{active: showHistory}" ng-click="selectHistory()">History</button>
+            <button class="btn" ng-class="{active: showHistory, 'btn-embossed': !showHistory}" ng-click="selectHistory()">History</button>
             <button class="btn btn-embossed" ng-click="showDepositModal()">Deposit</button>
           </li>
         </ul>
