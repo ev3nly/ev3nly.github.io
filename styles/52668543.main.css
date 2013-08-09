@@ -14399,6 +14399,20 @@ div[ng-controller="PendingCtrl"] {
   height: 44px;
 }
 /* line 77, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+.login .login-form input[type=checkbox] {
+  margin-top: -4px;
+  width: 20px;
+}
+/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+.login .login-form span {
+  display: inline-block;
+  width: 250px;
+}
+/* line 85, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+.login .login-form span a {
+  color: #0085d6;
+}
+/* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
 .login .login-form .alert {
   width: 250px;
 }
@@ -15512,4 +15526,12 @@ strong {
 /* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 button.btn-social-facebook {
   letter-spacing: 2px;
+}
+/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+.alert.alert-error {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #eed3d7;
+  background-color: #f2dede;
+  color: #b94a48;
 }
