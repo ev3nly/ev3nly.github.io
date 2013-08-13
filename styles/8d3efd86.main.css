@@ -14888,6 +14888,47 @@ nav.splash-bottom-nav ul li a {
 nav.splash-bottom-nav ul li a:hover {
   color: #242d32;
 }
+/* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding h1 {
+  font-size: 24px;
+  padding: 0 10px;
+}
+/* line 7, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-section {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #d7d7d7;
+  width: 318px;
+  padding: 10px;
+}
+/* line 12, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-section .onboarding-section-title {
+  font-size: 16px;
+  margin: 0;
+}
+/* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-section .onboarding-section-description {
+  font-size: 14px;
+  margin: 0;
+}
+/* line 22, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-section button {
+  float: right;
+  margin-top: 8px;
+  width: 70px;
+}
+/* line 28, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-section img {
+  float: right;
+}
+/* line 34, /Users/seansu4you87/Desktop/evenly-web/app/styles/onboarding.less */
+.onboarding .onboarding-dl-app a {
+  clear: both;
+  display: block;
+  margin: auto;
+  margin-top: 8px;
+  width: 200px;
+}
 /* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/evenly-brand.less */
 .evenly-brand img,
 .evenly-brand p {
@@ -15053,6 +15094,16 @@ nav.splash-bottom-nav ul li a:hover {
 /* line 116, /Users/seansu4you87/Desktop/evenly-web/app/styles/modals.less */
 ul.typeahead.dropdown-menu li a:hover {
   cursor: pointer;
+}
+/* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal {
+  width: 350px;
+  margin-left: -150px;
+}
+/* line 5, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal input {
+  height: 40px;
+  width: 100%;
 }
 /* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/deposit.less */
 .modal-deposit .modal-body {
@@ -15459,27 +15510,27 @@ body .ba-modal {
 .ios-download .beta a.btn.dropdown-toggle {
   width: 50px;
 }
-/* line 31, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 33, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 39, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 body {
   background: #f4f3f0;
 }
-/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 a,
 a:active,
 a:focus {
   outline: none;
 }
-/* line 45, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 47, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .offset0 {
   margin-left: 0px;
 }
-/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 51, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .content {
   border-left-style: solid;
   border-left-width: 1px;
@@ -15492,12 +15543,12 @@ a:focus {
   border-bottom-color: #d7d7d7;
   background-color: white;
 }
-/* line 58, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 60, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main,
 .sidebar {
   margin-top: 77px;
 }
-/* line 62, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .main {
   border-right-style: solid;
   border-right-width: 1px;
@@ -15505,7 +15556,7 @@ a:focus {
   min-height: 500px;
   background-color: white;
 }
-/* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 76, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 h1,
 h2,
 h3,
@@ -15519,15 +15570,15 @@ input,
 textarea {
   font-family: AvenirLTPro-Book !important;
 }
-/* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 80, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 strong {
   font-family: AvenirLTPro-Black !important;
 }
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 button.btn-social-facebook {
   letter-spacing: 2px;
 }
-/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+/* line 88, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
 .alert.alert-error {
   border-style: solid;
   border-width: 1px;

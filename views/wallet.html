@@ -37,7 +37,7 @@
                   <!-- <td><span ng-show="$root.activeCard" class="cc-brand">{{$root.activeCard.brand}}</span></td> -->
                   <td class="wallet-cc-number"><span ng-show="$root.activeCard.last_four">**** **** **** </span>{{$root.activeCard.last_four || 'Add'}}</td>
                   <!-- <td><button class="btn btn-mini" ng-click="showAddCardModal()">Add</button></td> -->
-                  <ng-include src="'views/add-card-modal.html'"></ng-include>
+                  <!-- <ng-include src="'views/add-card-modal.html'"></ng-include> -->
                 </tr>
               </table>
             </a>
@@ -50,7 +50,7 @@
                   <!-- <td><span ng-show="$root.activeBankAccount" class="wallet-brand">{{$root.activeBankAccount.bank_name}}</span></td> -->
                   <td class="wallet-bank-number">{{$root.activeBankAccount.account_number || 'Add'}}</td>
                   <!-- <td><button class="btn btn-mini" ng-click="showAddBankAccountModal()">Add</button></td> -->
-                  <ng-include src="'views/add-bank-account-modal.html'"></ng-include>
+                  <!-- <ng-include src="'views/add-bank-account-modal.html'"></ng-include> -->
                 </tr>
               </table>
             </a>
