@@ -23,6 +23,7 @@
           <p ng-show="story.story_type == 'Info'"><strong>{{story.verb}}</strong></p>
           <p ng-show="story.story_type == 'Info'">{{story.description}}</p>
           <p ng-show="story.story_type == 'User'"><strong>{{story.subject.name}}</strong> has joined Evenly!</p>
+          <p ng-show="story.story_type == 'Reward'"><strong>{{story.subject.name}}</strong> won <strong>${{story.amount}}</strong> on Evenly!</p>
           <p class="story-published">
             {{story.publishedString}} &middot; 
             <a class="btn-heart" href="" ng-click="heartPressed(story)">
