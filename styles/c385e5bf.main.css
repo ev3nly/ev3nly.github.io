@@ -14063,7 +14063,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/pending.less */
 .pending-no-results img {
-  margin: 0 144px;
+  margin: 0 144px 100px;
 }
 /* line 6, /Users/seansu4you87/Desktop/evenly-web/app/styles/static.less */
 .static .static-nav {
