@@ -19,11 +19,14 @@
             <img class="story-type" src="/images/96e05107.cash-coming.png" ng-switch-when="coming">
             <img class="story-type" src="/images/6219436f.cash-transfer.png" ng-switch-when="transfer">
           </span>
-          <p ng-show="story.story_type == 'Exchange'"><strong>{{story.subject.name}}</strong> and <strong>{{story.target.name}}</strong> shared {{story.description}}</p>
+          <!-- <p ng-show="story.story_type == 'Exchange'"><strong>{{story.subject.name}}</strong> and <strong>{{story.target.name}}</strong> shared {{story.description}}</p>
           <p ng-show="story.story_type == 'Info'"><strong>{{story.verb}}</strong></p>
           <p ng-show="story.story_type == 'Info'">{{story.description}}</p>
           <p ng-show="story.story_type == 'User'"><strong>{{story.subject.name}}</strong> has joined Evenly!</p>
-          <p ng-show="story.story_type == 'Reward'"><strong>{{story.subject.name}}</strong> won <strong>${{story.amount}}</strong> on Evenly!</p>
+          <p ng-show="story.story_type == 'Reward'"><strong>{{story.subject.name}}</strong> won <strong>${{story.amount}}</strong> on Evenly!</p> -->
+          
+          <p ng-show="story.display_title"><strong>{{story.display_title}}</strong></p>
+          <p ng-bind-html="story.display_description"></p>
           <p class="story-published">
             {{story.publishedString}} &middot; 
             <a class="btn-heart" href="" ng-click="heartPressed(story)">
