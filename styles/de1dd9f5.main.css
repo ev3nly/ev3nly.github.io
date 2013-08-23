@@ -15167,16 +15167,30 @@ ul.typeahead.dropdown-menu li a:hover {
   margin: 0;
 }
 /* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-tally {
+  width: 400px;
+  margin: 20px auto -10px;
+  text-align: center;
+}
+/* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-tally p:first-child {
+  font-size: 14px;
+}
+/* line 38, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-tally p:last-child {
+  margin-top: 10px;
+}
+/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-header {
   text-align: center;
 }
-/* line 36, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 45, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-details {
   text-align: center;
   padding: 0 75px;
   font-size: 14px;
 }
-/* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 51, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-divider {
   border-top-style: solid;
   border-top-width: 1px;
@@ -15185,56 +15199,56 @@ ul.typeahead.dropdown-menu li a:hover {
   margin-left: -15px;
   width: 998px;
 }
-/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 58, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more {
   text-align: center;
 }
-/* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 62, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons {
   margin: 20px auto;
 }
-/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 65, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-left,
 .invite-modal .invite-more-buttons .invite-more-buttons-right {
   display: inline-block;
   width: 49%;
 }
-/* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-left {
   padding-right: 10px;
 }
-/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 73, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-left .invite-link {
   float: right;
   margin: 0;
   display: inline-block;
   margin-right: 105px;
 }
-/* line 72, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-right {
   padding-left: 10px;
 }
-/* line 75, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook,
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter {
   float: left;
   display: inline-block;
   margin: 0;
 }
-/* line 79, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 88, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook .btn,
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter .btn {
   width: 185px;
 }
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 91, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook {
   margin-right: 5px;
 }
-/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter {
   margin-left: 5px;
 }
-/* line 92, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+/* line 101, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal .invite-help {
   font-size: 14px;
   text-align: center;

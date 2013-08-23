@@ -28,7 +28,12 @@
 
     <div class="alert alert-success" ng-show="serverSuccess">
       <p ng-show="serverSuccess">{{serverSuccess}}</p>
-      <p ng-show="serverSuccess">Invite <strong>{{invitesLeft()}} more</strong> friends to increase your potential winnings!</p>
+      <!-- <p ng-show="serverSuccess">Invite <strong>{{invitesLeft()}} more</strong> friends to increase your potential winnings!</p> -->
+      <!-- <p ng-show="potentialWinnings()">Potential winnings: <strong>${{potentialWinnings()}}</strong>!</p> -->
+    </div>
+
+    <div class="invite-tally">
+      <p ng-show="invitesLeft()">Invite <strong>{{invitesLeft()}} {{inviteCount && 'more' || ''}}</strong> friends to increase your potential winnings!</p>
       <p ng-show="potentialWinnings()">Potential winnings: <strong>${{potentialWinnings()}}</strong>!</p>
     </div>
 
