@@ -15131,13 +15131,115 @@ ul.typeahead.dropdown-menu li a:hover {
 }
 /* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal {
-  width: 350px;
-  margin-left: -150px;
+  width: 1000px;
+  margin-left: -500px;
 }
 /* line 5, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .modal-body {
+  max-height: 550px;
+}
+/* line 9, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
 .invite-modal input {
-  height: 40px;
+  height: 41px;
   width: 100%;
+}
+/* line 14, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-email {
+  width: 300px;
+  margin-top: 30px;
+  margin-left: 286px;
+  display: block;
+}
+/* line 19, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-email input {
+  border-color: #0085d6;
+}
+/* line 24, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .alert {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+/* line 29, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .alert p {
+  font-size: 14px;
+  margin: 0;
+}
+/* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-header {
+  text-align: center;
+}
+/* line 36, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-details {
+  text-align: center;
+  padding: 0 75px;
+  font-size: 14px;
+}
+/* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-divider {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #d7d7d7;
+  margin: 30px;
+  margin-left: -15px;
+  width: 998px;
+}
+/* line 49, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more {
+  text-align: center;
+}
+/* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons {
+  margin: 20px auto;
+}
+/* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-left,
+.invite-modal .invite-more-buttons .invite-more-buttons-right {
+  display: inline-block;
+  width: 49%;
+}
+/* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-left {
+  padding-right: 10px;
+}
+/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-left .invite-link {
+  float: right;
+  margin: 0;
+  display: inline-block;
+  margin-right: 105px;
+}
+/* line 72, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-right {
+  padding-left: 10px;
+}
+/* line 75, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook,
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter {
+  float: left;
+  display: inline-block;
+  margin: 0;
+}
+/* line 79, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook .btn,
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter .btn {
+  width: 185px;
+}
+/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-facebook {
+  margin-right: 5px;
+}
+/* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-more-buttons .invite-more-buttons-right .invite-twitter {
+  margin-left: 5px;
+}
+/* line 92, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-help {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  color: #8f8b8b;
 }
 /* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/deposit.less */
 .modal-deposit .modal-body {
@@ -15656,4 +15758,12 @@ button.btn-social-facebook {
   border-color: #eed3d7;
   background-color: #f2dede;
   color: #b94a48;
+}
+/* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/style.less */
+.alert.alert-success {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d6e9c6;
+  background-color: #dff0d8;
+  color: #468847;
 }
