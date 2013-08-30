@@ -17,7 +17,7 @@
 
     <form name="form">
       <div class="control-group input-append invite-email">
-        <input ng-model="inviteeData" name="inviteeData" type="text" placeholder="joe@college.edu or 555-555-5555">
+        <input ng-model="inviteeData" name="inviteeData" type="text" placeholder="Email address or phone number">
         <button class="btn btn-primary" ng-click="invite()">{{buttonTitle()}}</button>
       </div>
     </form>
@@ -44,7 +44,10 @@
     <div class="invite-more-buttons">
       <div class="invite-more-buttons-left">
         <div class="control-group invite-link input-prepend">
-            <button class="btn" type="button"><span class="fui-link"></span>Copy link</button>
+            <button id="btn-clipboard" data-clipboard-text="{{inviteUrl}}" class="btn" type="button">
+              
+              <span class="fui-link"></span>Copy link
+            </button>
             <input type="text" ng-model="inviteUrl" onclick="this.select()">
         </div>
       </div>
