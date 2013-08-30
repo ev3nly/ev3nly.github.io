@@ -15135,6 +15135,8 @@ ul.typeahead.dropdown-menu li a:hover {
   margin-left: -500px;
   /* Remove this when Inviting is ready */
 
+  width: 500px;
+  margin-left: -250px;
   /* END */
 
 }
@@ -15258,6 +15260,21 @@ ul.typeahead.dropdown-menu li a:hover {
   text-align: center;
   margin-top: 10px;
   color: #8f8b8b;
+}
+/* line 110, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-header,
+.invite-modal .invite-details,
+.invite-modal .invite-tally,
+.invite-modal .invite-divider,
+.invite-modal .invite-more,
+.invite-modal .invite-more-buttons,
+.invite-modal .modal-footer {
+  display: none;
+}
+/* line 116, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
+.invite-modal .invite-email {
+  margin-left: 40px;
+  margin-bottom: 50px;
 }
 /* line 2, /Users/seansu4you87/Desktop/evenly-web/app/styles/deposit.less */
 .modal-deposit .modal-body {
