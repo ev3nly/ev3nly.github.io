@@ -6193,10 +6193,10 @@ a.badge:focus {
 @import url("//hello.myfonts.net/count/27940e");
 
   
-@font-face {font-family: 'AvenirLTPro-Book';src: url('fonts/367db573.27940E_0_0.eot');src: url('fonts/367db573.27940E_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/2dfab329.27940E_0_0.woff') format('woff'),url('fonts/a5b55193.27940E_0_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirLTPro-Book';src: url('fonts/27940E_0_0.eot');src: url('fonts/27940E_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/27940E_0_0.woff') format('woff'),url('fonts/27940E_0_0.ttf') format('truetype');}
  
   
-@font-face {font-family: 'AvenirLTPro-Black';src: url('fonts/ccd1720d.27940E_1_0.eot');src: url('fonts/ccd1720d.27940E_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/9d28d694.27940E_1_0.woff') format('woff'),url('fonts/3191cc44.27940E_1_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirLTPro-Black';src: url('fonts/27940E_1_0.eot');src: url('fonts/27940E_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/27940E_1_0.woff') format('woff'),url('fonts/27940E_1_0.ttf') format('truetype');}
  
 .toast-title {
   font-weight: bold;
@@ -6340,8 +6340,8 @@ a.badge:focus {
 @import url("http://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
 @font-face {
   font-family: "Flat-UI-Icons";
-  src: url("fonts/aa1ead41.Flat-UI-Icons.eot");
-  src: url("fonts/aa1ead41.Flat-UI-Icons.eot?#iefix") format("embedded-opentype"), url("fonts/036dd105.Flat-UI-Icons.woff") format("woff"), url("fonts/e26abc28.Flat-UI-Icons.ttf") format("truetype"), url("fonts/3023d576.Flat-UI-Icons.svg#Flat-UI-Icons") format("svg");
+  src: url("fonts/Flat-UI-Icons.eot");
+  src: url("fonts/Flat-UI-Icons.eot?#iefix") format("embedded-opentype"), url("fonts/Flat-UI-Icons.woff") format("woff"), url("fonts/Flat-UI-Icons.ttf") format("truetype"), url("fonts/Flat-UI-Icons.svg#Flat-UI-Icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -14032,7 +14032,7 @@ div[ng-controller="PendingCtrl"] {
   height: 60px;
   float: left;
   margin-right: 20px;
-  background: url('/images/b18491ac.dawwww.jpg') no-repeat;
+  background: url('/images/dawwww.jpg') no-repeat;
   background-size: 100%;
   background-size: cover;
 }
@@ -14324,97 +14324,173 @@ div[ng-controller="PendingCtrl"] {
   border-bottom-color: #d7d7d7;
   padding: 20px;
 }
-/* line 3, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login {
-  background-color: black;
-  width: 100%;
+@media (min-width: 800px) {
+  /* line 4, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login {
+    background-color: black;
+    width: 100%;
+  }
+  /* line 10, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .left {
+    background-color: white;
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+  /* line 17, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .right {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #d7d7d7;
+    margin-left: -1px;
+    background-color: #f4f3f0;
+    float: right;
+    width: 50%;
+    height: 100%;
+  }
+  /* line 27, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .evenly-brand {
+    margin: 300px 40px;
+    float: right;
+  }
+  /* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup {
+    margin: 310px 40px;
+  }
+  /* line 34, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup button.btn-social-facebook {
+    width: 250px;
+  }
+  /* line 38, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup p {
+    margin-top: 10px;
+  }
+  /* line 43, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form {
+    width: 600px;
+    margin: 250px 40px;
+  }
+  /* line 47, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .help-block:first-child {
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 32px;
+  }
+  /* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .hint {
+    margin-top: 10px;
+    padding: 0;
+    font-size: 18px;
+    width: 250px;
+    text-align: justify;
+  }
+  /* line 60, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .hint a {
+    color: #0085d6;
+    margin-left: 10px;
+  }
+  /* line 66, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form button {
+    width: 250px;
+  }
+  /* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form input {
+    padding: 10px;
+    width: 250px;
+    height: 44px;
+  }
+  /* line 76, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form input[type=checkbox] {
+    margin-top: -4px;
+    width: 20px;
+  }
+  /* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form span {
+    display: inline-block;
+    width: 250px;
+  }
+  /* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form span a {
+    color: #0085d6;
+  }
+  /* line 89, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .alert {
+    width: 250px;
+  }
 }
-/* line 9, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .left {
-  background-color: white;
-  float: left;
-  width: 50%;
-  height: 100%;
-}
-/* line 16, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .right {
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: #d7d7d7;
-  margin-left: -1px;
-  background-color: #f4f3f0;
-  float: right;
-  width: 50%;
-  height: 100%;
-}
-/* line 26, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .evenly-brand {
-  margin: 300px 40px;
-  float: right;
-}
-/* line 31, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .fb-signup {
-  margin: 310px 40px;
-}
-/* line 33, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .fb-signup button.btn-social-facebook {
-  width: 250px;
-}
-/* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .fb-signup p {
-  margin-top: 10px;
-}
-/* line 42, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form {
-  width: 600px;
-  margin: 250px 40px;
-}
-/* line 46, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .help-block:first-child {
-  margin-bottom: 10px;
-  padding: 0;
-  font-size: 32px;
-}
-/* line 54, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .hint {
-  margin-top: 10px;
-  padding: 0;
-  font-size: 18px;
-  width: 250px;
-  text-align: justify;
-}
-/* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .hint a {
-  color: #0085d6;
-  margin-left: 10px;
-}
-/* line 67, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form button {
-  width: 250px;
-}
-/* line 71, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form input {
-  padding: 10px;
-  width: 250px;
-  height: 44px;
-}
-/* line 77, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form input[type=checkbox] {
-  margin-top: -4px;
-  width: 20px;
-}
-/* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form span {
-  display: inline-block;
-  width: 250px;
-}
-/* line 85, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form span a {
-  color: #0085d6;
-}
-/* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-.login .login-form .alert {
-  width: 250px;
+@media (max-width: 800px) {
+  /* line 97, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .container {
+    width: 320px;
+  }
+  /* line 102, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .evenly-brand {
+    margin: 10px 40px;
+    float: right;
+  }
+  /* line 107, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup {
+    margin: 20px 40px;
+  }
+  /* line 110, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup button.btn-social-facebook {
+    width: 250px;
+  }
+  /* line 114, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .fb-signup p {
+    margin-top: 10px;
+  }
+  /* line 120, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .help-block {
+    text-align: center;
+  }
+  /* line 124, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form input {
+    margin: -10px 20px;
+    height: 44px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+  }
+  /* line 130, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form input[type=text] {
+    border-radius: 0;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+  }
+  /* line 135, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form input[type=password] {
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  /* line 139, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form button {
+    margin: 20px 20px;
+    width: 100%;
+    height: 44px;
+  }
+  /* line 146, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .signup-terms,
+  .login .hint {
+    text-align: center;
+    margin-left: 35px;
+    display: none;
+  }
+  /* line 152, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .alert.alert-error {
+    margin-left: 20px;
+    width: 320px;
+  }
 }
 /* line 4, /Users/seansu4you87/Desktop/evenly-web/app/styles/home.less */
 .vertical-line {
@@ -14451,7 +14527,7 @@ div[ng-controller="PendingCtrl"] {
   height: 80px;
   float: left;
   margin-right: 10px;
-  background: url('/images/b18491ac.dawwww.jpg') no-repeat;
+  background: url('/images/dawwww.jpg') no-repeat;
   background-size: 100%;
   background-size: cover;
 }
@@ -14617,7 +14693,7 @@ div[ng-controller="PendingCtrl"] {
 /* line 50, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece {
   margin-top: -10px;
-  background: url('/images/d0052ed1.blur.png') no-repeat;
+  background: url('/images/blur.png') no-repeat;
   background-size: 100%;
 }
 /* line 56, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
@@ -14664,7 +14740,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 105, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .item .tagline-body .tagline-body-text ul li {
-  background: url("/images/026d4bde.checkmark.png") no-repeat 7px 7px transparent;
+  background: url("/images/checkmark.png") no-repeat 7px 7px transparent;
   padding: 5px 0px 0px 35px;
 }
 /* line 109, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
@@ -14739,7 +14815,7 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 170, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .centerpiece .item .tagline-body .iphone-hand {
-  background: url('/images/a3ae5fc7.iphone-hand.png') no-repeat;
+  background: url('/images/iphone-hand.png') no-repeat;
   background-size: 100%;
   width: 713px;
   height: 615px;
@@ -14754,27 +14830,27 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 188, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash-carousel-1 {
-  background: url('/images/88e6c821.splash-carousel-1.gif') no-repeat;
+  background: url('/images/splash-carousel-1.gif') no-repeat;
   background-size: 100%;
 }
 /* line 189, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash-carousel-2 {
-  background: url('/images/238bffe9.splash-carousel-2.gif') no-repeat;
+  background: url('/images/splash-carousel-2.gif') no-repeat;
   background-size: 100%;
 }
 /* line 190, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash-carousel-3 {
-  background: url('/images/55213230.splash-carousel-3.gif') no-repeat;
+  background: url('/images/splash-carousel-3.gif') no-repeat;
   background-size: 100%;
 }
 /* line 191, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash-carousel-4 {
-  background: url('/images/ff7e4b2d.splash-carousel-4.gif') no-repeat;
+  background: url('/images/splash-carousel-4.gif') no-repeat;
   background-size: 100%;
 }
 /* line 192, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .splash-carousel-5 {
-  background: url('/images/5e5f449f.splash-carousel-5.png') no-repeat;
+  background: url('/images/splash-carousel-5.png') no-repeat;
   background-size: 100%;
 }
 /* line 194, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
@@ -14842,17 +14918,17 @@ div[ng-controller="PendingCtrl"] {
 }
 /* line 249, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-1 {
-  background: url('/images/6315aef1.onboarding-1.png') no-repeat;
+  background: url('/images/onboarding-1.png') no-repeat;
   background-size: 100%;
 }
 /* line 250, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-2 {
-  background: url('/images/7e325345.onboarding-2.png') no-repeat;
+  background: url('/images/onboarding-2.png') no-repeat;
   background-size: 100%;
 }
 /* line 251, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
 .brochure .onboarding-3 {
-  background: url('/images/7241da8d.onboarding-3.png') no-repeat;
+  background: url('/images/onboarding-3.png') no-repeat;
   background-size: 100%;
 }
 /* line 253, /Users/seansu4you87/Desktop/evenly-web/app/styles/splash.less */
@@ -15177,7 +15253,7 @@ ul.typeahead.dropdown-menu li a:hover {
   text-align: center;
 }
 /* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
-.invite-modal .invite-tally p:first-child {
+.invite-modal .invite-tally p {
   font-size: 14px;
 }
 /* line 38, /Users/seansu4you87/Desktop/evenly-web/app/styles/invite-modal.less */
@@ -15347,7 +15423,7 @@ ul.typeahead.dropdown-menu li a:hover {
   width: 179px;
   height: 180px;
   float: left;
-  background: url('/images/b18491ac.dawwww.jpg') no-repeat;
+  background: url('/images/dawwww.jpg') no-repeat;
   background-size: 100%;
 }
 /* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/settings.less */
@@ -15507,7 +15583,7 @@ body .cc-modal {
 /* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .cc-form input[ng-model="card.number"] {
   margin-right: 10px;
-  background: #ffffff url(../../images/brands/d6da957f.generic.png) 97% 50% no-repeat;
+  background: #ffffff url(../../images/brands/generic.png) 97% 50% no-repeat;
   background-size: 25px;
 }
 /* line 68, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
@@ -15521,19 +15597,19 @@ body .cc-modal {
 }
 /* line 78, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .visa {
-  background-image: url(../../images/brands/d3477de1.visa.png) !important;
+  background-image: url(../../images/brands/visa.png) !important;
 }
 /* line 82, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .mastercard {
-  background-image: url(../../images/brands/e9e00118.mastercard.png) !important;
+  background-image: url(../../images/brands/mastercard.png) !important;
 }
 /* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .discover {
-  background-image: url(../../images/brands/3708eb72.discover.png) !important;
+  background-image: url(../../images/brands/discover.png) !important;
 }
 /* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/cc.less */
 .amex {
-  background-image: url(../../images/brands/693f9c14.amex.png) !important;
+  background-image: url(../../images/brands/amex.png) !important;
 }
 /* line 1, /Users/seansu4you87/Desktop/evenly-web/app/styles/ba.less */
 .ba-list {

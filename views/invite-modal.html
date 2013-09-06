@@ -33,8 +33,8 @@
     </div>
 
     <div class="invite-tally">
-      <p ng-show="invitesLeft()">Invite <strong>{{invitesLeft()}} {{inviteCount && 'more' || ''}}</strong> friends to increase your potential winnings!</p>
-      <p ng-show="potentialWinnings()">Potential winnings: <strong>${{potentialWinnings()}}</strong>!</p>
+      <p ng-show="!potentialWinnings()">Invite <strong>{{invitesLeft()}} {{inviteCount && 'more' || ''}}</strong> friends to earn <strong>$5</strong>!</p>
+      <p ng-show="potentialWinnings()">When they sign up, your friends get <strong>${{inviteCount}}</strong>, you get <strong>${{potentialWinnings()}}</strong>.</p>
     </div>
 
     <div class="invite-divider"></div>
