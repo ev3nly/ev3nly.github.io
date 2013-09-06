@@ -1,5 +1,3 @@
-<!-- <meta name="viewport" content="width=device-width, user-scalable=no" /> -->
-
 <div class="login">
   <div class="left">
     <div class="evenly-brand">
@@ -8,8 +6,15 @@
   </div>
 
   <div class="right">
-    
     <div class="control-group fb-signup" ng-hide="$root.fbToken">
+      <div class="help-block">
+        <p ng-show="referral">
+          You have been invited to Evenly!  
+          <br>
+          Sign up now and we'll give you <strong>$1</strong> to start!
+        </p>
+      </div>
+
       <button ng-click="facebookContinue()" href="" class="btn btn-huge btn-embossed btn-social-facebook">
         
         <i class="fui-facebook"></i>
@@ -27,7 +32,14 @@
     </div>
 
     <form ng-show="$root.fbToken" class="login-form" name="form">
-      <div class="help-block">Sign Up</div>
+      <div class="help-block">
+        <p ng-hide="referral">Sign Up</p>
+        <p ng-show="referral">
+          You have been invited to Evenly!  
+          <br>
+          Sign up now and we'll give you <strong>$1</strong> to start!
+        </p>
+      </div>
           
       <div class="control-group" ng-class="form.name.$error">
         <input type="text" ng-model="name" placeholder="Name" required="">
@@ -52,7 +64,8 @@
       <div class="control-group">
         <button class="btn btn-primary btn-block btn-embossed" ng-click="signup()" ng-class="{disabled: submitting}">{{buttonTitle}}</button>
         <div class="help-block hint">Have an account? 
-          <a href="/#/login">Log in here</a>
+          <a class="signup-login" href="/#/login">Log in here</a>
+          <a class="signup-get-app" href="/#/ios-download">Get the app</a>
         </div>
       </div>
 

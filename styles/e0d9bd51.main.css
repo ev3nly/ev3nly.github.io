@@ -14374,6 +14374,9 @@ div[ng-controller="PendingCtrl"] {
   .login .login-form .help-block:first-child {
     margin-bottom: 10px;
     padding: 0;
+  }
+  /* line 50, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .help-block:first-child p:first-child {
     font-size: 32px;
   }
   /* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
@@ -14389,72 +14392,87 @@ div[ng-controller="PendingCtrl"] {
     color: #0085d6;
     margin-left: 10px;
   }
-  /* line 66, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 65, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .hint .signup-get-app {
+    display: none;
+  }
+  /* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form button {
     width: 250px;
   }
-  /* line 70, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 74, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form input {
     padding: 10px;
     width: 250px;
     height: 44px;
   }
-  /* line 76, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 80, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form input[type=checkbox] {
     margin-top: -4px;
     width: 20px;
   }
-  /* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 85, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form span {
     display: inline-block;
     width: 250px;
   }
-  /* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 88, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form span a {
     color: #0085d6;
   }
-  /* line 89, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 93, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form .alert {
     width: 250px;
   }
 }
 @media (max-width: 800px) {
-  /* line 97, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 101, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .container {
     width: 320px;
   }
-  /* line 102, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 106, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .evenly-brand {
     margin: 10px 40px;
     float: right;
   }
-  /* line 107, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 111, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .fb-signup {
     margin: 20px 40px;
   }
-  /* line 110, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 114, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .fb-signup button.btn-social-facebook {
     width: 250px;
   }
-  /* line 114, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 118, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .fb-signup p {
     margin-top: 10px;
   }
-  /* line 120, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-  .login .login-form .help-block {
+  /* line 123, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .help-block {
     text-align: center;
+    width: 300px;
+    margin-left: -20px;
+    margin-bottom: 20px;
   }
-  /* line 124, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 128, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .help-block p {
+    font-size: 14px;
+  }
+  /* line 132, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .login-form .help-block {
+    margin-left: 30px;
+  }
+  /* line 136, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form input {
     margin: -10px 20px;
     height: 44px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+    border-radius: 1px;
   }
-  /* line 130, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 142, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form input[type=text] {
     border-radius: 0;
     -webkit-border-top-left-radius: 5px;
@@ -14464,7 +14482,7 @@ div[ng-controller="PendingCtrl"] {
     -moz-border-radius-topright: 5px;
     border-top-right-radius: 5px;
   }
-  /* line 135, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 147, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form input[type=password] {
     -webkit-border-bottom-right-radius: 5px;
     -moz-border-radius-bottomright: 5px;
@@ -14473,20 +14491,27 @@ div[ng-controller="PendingCtrl"] {
     -moz-border-radius-bottomleft: 5px;
     border-bottom-left-radius: 5px;
   }
-  /* line 139, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 151, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .login-form button {
     margin: 20px 20px;
     width: 100%;
     height: 44px;
   }
-  /* line 146, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
-  .login .signup-terms,
-  .login .hint {
+  /* line 158, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .signup-terms {
     text-align: center;
     margin-left: 35px;
     display: none;
   }
-  /* line 152, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  /* line 165, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .hint a {
+    color: #0085d6;
+  }
+  /* line 166, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
+  .login .hint a.signup-login {
+    display: none;
+  }
+  /* line 169, /Users/seansu4you87/Desktop/evenly-web/app/styles/login.less */
   .login .alert.alert-error {
     margin-left: 20px;
     width: 320px;
