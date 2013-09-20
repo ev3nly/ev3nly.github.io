@@ -22,5 +22,6 @@
     "commit": "171b80650f6501143878d2ec50e57f466c31e7d8"
   },
   "_source": "git://github.com/firebase/angularFire.git",
-  "_target": "*"
+  "_target": "0.2.0",
+  "_originalSource": "angular-fire"
 }

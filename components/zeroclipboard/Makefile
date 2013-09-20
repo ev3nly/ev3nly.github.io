@@ -1,7 +1,7 @@
 # set an environment variable to override this to your location. export SWF_COMPILER = /My/Location/bin/mxmlc
 SWF_COMPILER ?= /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin/mxmlc -static-link-runtime-shared-libraries=true
 
-NODE_PATH = ./node_modules
+NODE_PATH ?= ./node_modules
 JS_COMPILER = $(NODE_PATH)/uglify-js/bin/uglifyjs
 JS_BEAUTIFIER = $(NODE_PATH)/uglify-js/bin/uglifyjs -b -i 2 -nm -ns
 JS_TEST = $(NODE_PATH)/nodeunit/bin/nodeunit
@@ -11,7 +11,7 @@ all: \
 	node_modules \
 	ZeroClipboard.min.js \
 	ZeroClipboard.swf \
-	bower.json \
+	component.json \
 	LICENSE \
 	test \
 
@@ -47,9 +47,9 @@ LICENSE: Makefile
 	cat ./src/license.js | node src/build.js > $@
 	@chmod a-w $@
 
-bower.json: Makefile
+component.json: Makefile
 	@rm -f $@
-	cat ./src/bower.js | node src/build.js > $@
+	cat ./src/component.js | node src/build.js > $@
 	@chmod a-w $@
 
 test: ZeroClipboard.min.js
@@ -57,6 +57,6 @@ test: ZeroClipboard.min.js
 	$(JS_TEST) ./test
 
 clean:
-	rm -rf ./bower.json ./ZeroClipboard* ./LICENSE
+	rm -rf ./component.json ./ZeroClipboard* ./LICENSE
 
 .PHONY: all test clean

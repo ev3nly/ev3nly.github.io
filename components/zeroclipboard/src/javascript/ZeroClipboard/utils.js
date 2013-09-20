@@ -1,57 +1,27 @@
 /*
- * Private function _camelizeCssPropName is used to convert standard CSS
- * property names into the equivalent CSS property names for use by oldIE
- * and/or `el.style.{prop}`.
- * e.g. "z-index" -> "zIndex"
- *
- * NOTE: oldIE has other special cases that are not accounted for here,
- * e.g. "float" -> "styleFloat"
- *
- * returns the CSS property name for oldIE and/or `el.style.{prop}`
- */
-var _camelizeCssPropName = (function () {
-  var matcherRegex = /\-([a-z])/g,
-      replacerFn = function (match, group) { return group.toUpperCase(); };
-
-  return function (prop) {
-    return prop.replace(matcherRegex, replacerFn);
-  };
-})();
-
-/*
  * Private function _getStyle is used to try and guess the element style; If
  * if we're looking for cursor, then we make a guess for <a>.
  *
  * returns the computed style
  */
 var _getStyle = function (el, prop) {
-  var value, camelProp, tagName, possiblePointers, i, len;
-  
-  if (window.getComputedStyle) {
-    value = window.getComputedStyle(el, null).getPropertyValue(prop);
-  }
-  else {
-    camelProp = _camelizeCssPropName(prop);
+  var y = el.style[prop];
 
-    if (el.currentStyle) {
-      value = el.currentStyle[camelProp];
-    }
-    else {
-      value = el.style[camelProp];
-    }
-  }
+  if (el.currentStyle)
+    y = el.currentStyle[prop];
+  else if (window.getComputedStyle)
+    y = document.defaultView.getComputedStyle(el, null).getPropertyValue(prop);
 
-  if (value === "auto" && prop === "cursor") {
-    tagName = el.tagName.toLowerCase();
-    possiblePointers = ["a"];
-    for (i = 0, len = possiblePointers.length; i < len; i++) {
-      if (tagName === possiblePointers[i]) {
+  if (y == "auto" && prop == "cursor") {
+    var possiblePointers = ["a"];
+    for (var i = 0; i < possiblePointers.length; i++) {
+      if (el.tagName.toLowerCase() == possiblePointers[i]) {
         return "pointer";
       }
     }
   }
 
-  return value;
+  return y;
 };
 
 /*
@@ -173,75 +143,40 @@ var _removeClass = function (element, value) {
 };
 
 /*
- * private get the zoom factor of the document. Always returns 1, except at
- * non-default zoom levels in IE<8, and possibly some older versions of WebKit.
- *
- * returns floating unit percentage of the zoom factor (e.g. 150% = `1.5`)
- */
-var _getZoomFactor = function () {
-  var rect, physicalWidth, logicalWidth,
-      zoomFactor = 1;
-  if (typeof document.body.getBoundingClientRect === "function") {
-    // rect is only in physical pixels in IE<8
-    rect = document.body.getBoundingClientRect();
-    physicalWidth = rect.right - rect.left;
-    logicalWidth = document.body.offsetWidth;
-
-    zoomFactor = Math.round((physicalWidth / logicalWidth) * 100) / 100;
-  }
-  return zoomFactor;
-};
-
-/*
  * private get the dom position of an object.
  *
- * returns json of object's position, height, width, and zIndex
+ * returns json of objects position, height, width, and zindex
  */
 var _getDOMObjectPosition = function (obj) {
   // get absolute coordinates for dom element
   var info = {
     left:   0,
     top:    0,
-    width:  0,
-    height: 0,
-    zIndex: 999999999  /* Max value (32-bit): 2147483647 */
+    width:  obj.width  || obj.offsetWidth  || 0,
+    height: obj.height || obj.offsetHeight || 0,
+    zIndex: 9999
   };
 
 
-  var zi = _getStyle(obj, "z-index");
+  var zi = _getStyle(obj, "zIndex");
   // float just above object, or default zIndex if dom element isn't set
-  if (zi && zi !== "auto") {
+  if (zi && zi != "auto") {
     info.zIndex = parseInt(zi, 10);
   }
 
-  // Use getBoundingClientRect where available (almost everywhere).
-  // See: http://www.quirksmode.org/dom/w3c_cssom.html
-  if (obj.getBoundingClientRect) {
-    // compute left / top offset (works for `position:fixed`, too!)
-    var rect = obj.getBoundingClientRect();
-    var pageXOffset, pageYOffset, zoomFactor;
+  while (obj) {
 
-    // IE<9 doesn't support `pageXOffset`/`pageXOffset`
-    if ("pageXOffset" in window && "pageYOffset" in window) {
-      pageXOffset = window.pageXOffset;
-      pageYOffset = window.pageYOffset;
-    }
-    else {
-      zoomFactor = _getZoomFactor();
-      pageXOffset = Math.round(document.documentElement.scrollLeft / zoomFactor);
-      pageYOffset = Math.round(document.documentElement.scrollTop / zoomFactor);
-    }
-    
-    // `clientLeft`/`clientTop` are to fix IE's 2px offset in standards mode
-    var leftBorderWidth = document.documentElement.clientLeft || 0;
-    var topBorderWidth = document.documentElement.clientTop || 0;
+    var borderLeftWidth = parseInt(_getStyle(obj, "borderLeftWidth"), 10);
+    var borderTopWidth  = parseInt(_getStyle(obj, "borderTopWidth"), 10);
 
-    info.left = rect.left + pageXOffset - leftBorderWidth;
-    info.top = rect.top + pageYOffset - topBorderWidth;
-    info.width = "width" in rect ? rect.width : rect.right - rect.left;
-    info.height = "height" in rect ? rect.height : rect.bottom - rect.top;
+    info.left += isNaN(obj.offsetLeft)  ? 0 : obj.offsetLeft;
+    info.left += isNaN(borderLeftWidth) ? 0 : borderLeftWidth;
+    info.top += isNaN(obj.offsetTop)    ? 0 : obj.offsetTop;
+    info.top += isNaN(borderTopWidth)   ? 0 : borderTopWidth;
+
+    obj = obj.offsetParent;
   }
-  
+
   return info;
 };
 
@@ -253,12 +188,7 @@ var _getDOMObjectPosition = function (obj) {
  * returns path with noncache param added
  */
 var _noCache = function (path) {
-  var client = ZeroClipboard.prototype._singleton;
-  if (client.options.useNoCache) {
-    return (path.indexOf("?") >= 0 ? "&nocache=" : "?nocache=") + (new Date()).getTime();
-  } else {
-    return "";
-  }
+  return ((path.indexOf("?") >= 0) ? "&" : "?") + "nocache=" + (new Date().getTime());
 };
 
 /*
@@ -272,24 +202,11 @@ var _vars = function (options) {
 
   // if trusted domain is set
   if (options.trustedDomains) {
-    var domains;
-    if (typeof options.trustedDomains === "string" && options.trustedDomains) {
-      domains = [options.trustedDomains];
+    if (typeof options.trustedDomains === "string") {
+      str.push("trustedDomain=" + options.trustedDomains);
+    } else {
+      str.push("trustedDomain=" + options.trustedDomains.join(","));
     }
-    else if ("length" in options.trustedDomains) {
-      domains = options.trustedDomains;
-    }
-    str.push("trustedDomain=" + encodeURIComponent(domains.join(",")));
-  }
-
-  // if ZeroClipboard is loaded as an AMD module
-  if (typeof options.amdModuleId === "string" && options.amdModuleId) {
-    str.push("amdModuleId=" + encodeURIComponent(options.amdModuleId));
-  }
-
-  // if ZeroClipboard is loaded as a CommonJS module
-  if (typeof options.cjsModuleId === "string" && options.cjsModuleId) {
-    str.push("cjsModuleId=" + encodeURIComponent(options.cjsModuleId));
   }
 
   // join the str by &
@@ -331,22 +248,4 @@ var _prepGlue = function (elements) {
   if (!elements.length) return [elements];
 
   return elements;
-};
-
-
-/*
- * private _dispatchCallback
- * used to control if callback should be executed asynchronously or not
- *
- * returns nothing
- */
-
-var _dispatchCallback = function (func, element, instance, args, async) {
-  if (async) {
-    window.setTimeout(function () {
-      func.call(element, instance, args);
-    }, 0);
-  } else {
-    func.call(element, instance, args);
-  }
 };

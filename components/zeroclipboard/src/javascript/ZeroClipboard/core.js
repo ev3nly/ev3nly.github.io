@@ -6,8 +6,7 @@ var _defaults = {
   text:              null,                       // The text to be copied
   hoverClass:        "zeroclipboard-is-hover",   // The class used to hover over the object
   activeClass:       "zeroclipboard-is-active",  // The class used to set object active
-  allowScriptAccess: "sameDomain",               // SWF outbound scripting policy
-  useNoCache:        true                        // Ability to turn off Flash cache hack for IE
+  allowScriptAccess: "sameDomain"                // SWF outbound scripting policy
 };
 
 /*
@@ -41,24 +40,25 @@ ZeroClipboard.destroy = function () {
 /*
  * Simple Flash Detection
  *
- * returns true if Flash is detected
+ * returns true if flash is detected
  */
 ZeroClipboard.detectFlashSupport = function () {
+
+  // Assume we don't have it
   var hasFlash = false;
 
-  // IE
-  if (typeof ActiveXObject === "function") {
-    try {
-      if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) {
-        hasFlash = true;
-      }
-    }
-    catch (error) {}
-  }
+  try {
 
-  // Every other browser
-  if (!hasFlash && navigator.mimeTypes["application/x-shockwave-flash"]) {
-    hasFlash = true;
+    // If we can create an ActiveXObject
+    if (new ActiveXObject('ShockwaveFlash.ShockwaveFlash')) {
+      hasFlash = true;
+    }
+  } catch (error) {
+
+    // If the navigator knows what to do with the flash mimetype
+    if (navigator.mimeTypes["application/x-shockwave-flash"]) {
+      hasFlash = true;
+    }
   }
 
   return hasFlash;

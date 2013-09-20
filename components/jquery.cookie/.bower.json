@@ -15,5 +15,6 @@
     "commit": "fedc4cbb420ff48fe3d10c60ed0d594e8480e57b"
   },
   "_source": "git://github.com/carhartl/jquery-cookie.git",
-  "_target": "*"
+  "_target": "*",
+  "_originalSource": "jquery.cookie"
 }
