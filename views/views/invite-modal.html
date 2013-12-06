@@ -1,0 +1,80 @@
+<div modal="inviteShouldBeOpen" close="hideInviteModal()" options="inviteOpts" ng-controller="InviteCtrl">
+  <div class="modal-header">
+    <button class="close" ng-click="hideInviteModal()">×</button>
+    <h3>Invite</h3>
+  </div>
+
+  <div class="modal-body">
+    <h4 class="invite-header">
+      Earn <strong>$5</strong> for every 3 friends that sign up for Evenly!
+    </h4>
+    <p class="invite-details">
+      For every 3 friends that sign up for Evenly through the url below, you'll 
+      earn $5!  
+      <br>
+      Even better, each of your friends that sign up will also earn $1!
+    </p>
+
+    <form name="form">
+      <div class="control-group input-append invite-email">
+        <input ng-model="inviteeData" name="inviteeData" type="text" placeholder="Email address or phone number">
+        <button class="btn btn-primary" ng-click="invite()">{{buttonTitle()}}</button>
+      </div>
+    </form>
+
+    <div class="alert alert-error" ng-show="serverError">
+      <p ng-show="serverError">{{serverError}}</p>
+    </div>
+
+    <div class="alert alert-success" ng-show="serverSuccess">
+      <p ng-show="serverSuccess">{{serverSuccess}}</p>
+      <!-- <p ng-show="serverSuccess">Invite <strong>{{invitesLeft()}} more</strong> friends to increase your potential winnings!</p> -->
+      <!-- <p ng-show="potentialWinnings()">Potential winnings: <strong>${{potentialWinnings()}}</strong>!</p> -->
+    </div>
+
+    <div class="invite-tally">
+      <p ng-show="!potentialWinnings()">Invite <strong>{{invitesLeft()}} {{inviteCount && 'more' || ''}}</strong> friends to earn <strong>$5</strong>!</p>
+      <p ng-show="potentialWinnings()">When they sign up, your friends get <strong>${{inviteCount}}</strong>, you get <strong>${{potentialWinnings()}}</strong>.</p>
+    </div>
+
+    <div class="invite-divider"></div>
+
+    <h5 class="invite-more">More ways to invite your friends</h5>
+    
+    <div class="invite-more-buttons">
+      <div class="invite-more-buttons-left">
+        <div class="control-group invite-link input-prepend">
+            <button id="btn-clipboard" data-clipboard-text="{{inviteUrl}}" class="btn" type="button">
+              
+              <span class="fui-link"></span>Copy link
+            </button>
+            <input type="text" ng-model="inviteUrl" onclick="this.select()">
+        </div>
+      </div>
+
+      <div class="invite-more-buttons-right">
+        <div class="control-group invite-facebook">
+          <a href="" ng-click="facebookShare()" class="btn btn-social-facebook">
+            <i class="fui-facebook"></i>
+            Share on Facebook
+          </a>
+        </div>
+
+        <div class="control-group invite-twitter">
+          <a href="" ng-click="tweet()" class="btn btn-social-twitter">
+            <i class="fui-twitter"></i>
+            Tweet on Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <p class="invite-help">
+      We'll automatically send you the money as your friends sign up!  The 
+      transactions will show up in your <a href="#/home" ng-click="hideInviteModal()">newsfeed</a> 
+      and in your <a href="#/wallet" ng-click="hideInviteModal()">history</a>.
+    </p>
+  </div>
+</div>
