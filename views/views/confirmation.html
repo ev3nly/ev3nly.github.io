@@ -1,0 +1,13 @@
+<div class="confirmation">
+  <p><img src="/images/e24b7a8a.logo-wordmark.png"></p>
+  <h1>Account Confirmation</h1>
+  
+  <p ng-show="submitting">Please wait while we confirm your account</p>
+  
+  <p ng-show="success">
+    Your account has been successfully confirmed! Please visit <a href="https://evenly.com">
+    evenly.com<a> or grab our <a href="https://evenly.com/#/ios-download">iPhone app</a> to get started.
+  </a></p>
+
+  <p ng-show="serverError">{{serverError}}</p>
+</div>

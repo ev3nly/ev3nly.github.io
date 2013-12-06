@@ -1,0 +1,132 @@
+<!-- <button class="btn" ng-click="test()">Don't Click Me!</button> -->
+<ng-include src="'views/nav.html'"></ng-include>
+
+<div class="row" id="foo">
+  <div class="span12 offset0 content">
+    <div class="span8 offset0 main">
+
+      <ng-include src="'views/action-bar.html'"></ng-include>
+      
+      <div class="story" ng-repeat="story in newsfeed">
+        <div class="story-profile-picture" style="background-image: url('{{story.image_url || story.subject.avatar_url || defaultProfilePic(story.subject.id)}}')">
+          <!-- <img src="{{story.subject.avatar_url}}"> -->
+        </div>
+        <div class="story-content">
+          <span ng-switch="" on="story.type">
+            <img class="story-type" src="/images/50627cdf.cash-left.png" ng-switch-when="left">
+            <img class="story-type" src="/images/4086b77a.cash-came.png" ng-switch-when="came">
+            <img class="story-type" src="/images/26ef00d6.cash-leaving.png" ng-switch-when="leaving">
+            <img class="story-type" src="/images/96e05107.cash-coming.png" ng-switch-when="coming">
+            <img class="story-type" src="/images/6219436f.cash-transfer.png" ng-switch-when="transfer">
+          </span>
+          <!-- <p ng-show="story.story_type == 'Exchange'"><strong>{{story.subject.name}}</strong> and <strong>{{story.target.name}}</strong> shared {{story.description}}</p>
+          <p ng-show="story.story_type == 'Info'"><strong>{{story.verb}}</strong></p>
+          <p ng-show="story.story_type == 'Info'">{{story.description}}</p>
+          <p ng-show="story.story_type == 'User'"><strong>{{story.subject.name}}</strong> has joined Evenly!</p>
+          <p ng-show="story.story_type == 'Reward'"><strong>{{story.subject.name}}</strong> won <strong>${{story.amount}}</strong> on Evenly!</p> -->
+          
+          <p ng-show="story.display_title"><strong>{{story.display_title}}</strong></p>
+          <p ng-bind-html="story.display_description"></p>
+          <p class="story-published">
+            {{story.publishedString}} &middot; 
+            <a class="btn-heart" href="" ng-click="heartPressed(story)">
+              <img src="/images/47a36de3.heart.png" ng-hide="storyLikedByUser(story, $root.me.id)">
+              <img src="/images/6dfb95a8.heart-red.png" ng-show="storyLikedByUser(story, $root.me.id)"> 
+              {{storyLikesString(story)}}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <ng-include src="'views/evenly-footer.html'"></ng-include>
+
+    </div>
+
+    <div class="span4 offset0 sidebar">
+
+      <!-- <p class='ivy-evenly-help'>
+        <strong>Welcome to Evenly!</strong>
+        <br>
+        Thanks to all of our Ivy users who've made the transition. 
+        If you have any questions or issues, feel free send us an email.
+
+        <a href="mailto:support@evenly.com" class="btn btn-embossed">Email Evenly</a>
+      </p> -->
+
+      <div class="onboarding">
+
+        <div class="onboarding-steps" ng-hide="$root.me.onboarded || (!$root.me)">
+          <h1>Getting Started</h1>
+
+          <div class="onboarding-section onboarding-sign-up">
+            <img src="/images/0877d61c.checkmark-green.png">
+            <p class="onboarding-section-title">Sign up for Evenly</p>
+          </div>
+
+          <div class="onboarding-section onboarding-fb-connect">
+            <button class="btn btn-mini btn-embossed" ng-click="facebookContinue()" ng-hide="$root.me.facebookUser">Connect</button>
+            <img src="/images/0877d61c.checkmark-green.png" ng-show="$root.me.facebookUser">
+            <p class="onboarding-section-title">Connect with Facebook</p>
+            <p class="onboarding-section-description">Share the experience with friends</p>
+          </div>
+
+          <div class="onboarding-section onboarding-add-card">
+            <button class="btn btn-mini btn-embossed" ng-click="showAddCardModal()" ng-hide="$root.me.buyer">Add</button>
+            <img src="/images/0877d61c.checkmark-green.png" ng-show="$root.me.buyer">
+            <p class="onboarding-section-title">Add a card</p>
+            <p class="onboarding-section-description">Use any debit or credit card</p>
+          </div>
+
+          <div class="onboarding-section onboarding-invite-friend">
+            <button class="btn btn-mini btn-embossed" ng-click="showInviteModal()" ng-hide="$root.me.inviter">Invite</button>
+            <img src="/images/0877d61c.checkmark-green.png" ng-show="$root.me.inviter">
+            <p class="onboarding-section-title">Invite your friends</p>
+            <p class="onboarding-section-description">Earn $5 when 3 friends sign up!</p>
+          </div>
+
+          <div class="onboarding-section onboarding-exchange">
+            <button class="btn btn-mini btn-embossed" ng-click="showPaymentModal()" ng-hide="$root.me.requester || $root.me.payer">Send</button>
+            <img src="/images/0877d61c.checkmark-green.png" ng-show="$root.me.requester">
+            <!-- <button
+              ng-href="{{selectedbetaOptionUrl()}}" 
+              class="btn btn-mini btn-embosssed">Send</button>
+            <a class="btn btn-mini btn-embossed dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-inverse">
+              <li class="pull-left">
+                <a ng-click="showPaymentModal()">Payment</a>
+              </li>
+              <li class="pull-left">
+                <a ng-click="showRequestModal()">Request</a>
+              </li>
+            </ul> -->
+
+            <p class="onboarding-section-title">
+              Send a <a href="" ng-click="showPaymentModal()">payment</a> or 
+              <a href="" ng-click="showRequestModal()">request</a>
+            </p>
+            <p class="onboarding-section-description">It only takes 10 seconds</p>
+          </div>
+
+          <div class="onboarding-section onboarding-add-bank">
+            <button class="btn btn-mini btn-embossed" ng-click="showAddBankAccountModal()" ng-hide="$root.me.seller">Add</button>
+            <img src="/images/0877d61c.checkmark-green.png" ng-show="$root.me.seller">
+            <p class="onboarding-section-title">Add a bank</p>
+            <p class="onboarding-section-description">Deposit your Evenly Cash</p>
+          </div>
+        </div>
+
+        <div class="onboarding-section onboarding-dl-app">
+          <a class="btn btn-primary btn-embossed" ng-click="textDownloadApp()" ng-disabled="texting">Download the iPhone app</a>
+
+          <a class="btn btn-embossed" ng-click="showInviteModal()" ng-disabled="texting">Earn $5. Invite Friends</a>
+        </div>
+
+      </div>
+      
+      <ng-include src="'views/bottom-nav.html'"></ng-include>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div ng-controller="CampaignCtrl" modal="campaignModalShouldBeOpen" close="close()" options="campaignOpts">
+  <div class="modal-header" ng-class="campaignClass()">
+    <button class="close" ng-click="dismissCampaignModal()">×</button>
+    <h3>{{welcomeTextForCampaign($root.campaign)}}</h3>
+  </div>
+
+  <div class="modal-body">
+    <img src="/images/7e325345.onboarding-2.png">
+    <p ng-class="campaignClass()">
+      Sign up below and we'll give you <strong>$5.00</strong> to get started.
+      <br>
+      <br>
+      Hurry, only the first 100 people to sign up get this bonus!
+    </p>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn pull-left" ng-click="dismissCampaignModal()">Learn More</button>
+    <button class="btn btn-social-facebook" ng-click="facebookContinue()">
+      <i class="fui-facebook"></i>
+      Continue
+    </button>
+  </div>
+</div>

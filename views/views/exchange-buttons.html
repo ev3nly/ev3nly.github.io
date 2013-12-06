@@ -1,0 +1,16 @@
+<div class="btn-group pull-left">
+  <i class="dropdown-arrow dropdown-arrow-inverse"></i>
+  <a class="btn"><span ng-class="visibilityIcon()"></span> {{visibilityString()}}</a>
+  <a class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu dropdown-inverse">
+    <li class="pull-left"><a ng-click="selectPrivate()"><span class="fui-lock"></span> Private</a></li>
+    <li class="pull-left"><a ng-click="selectFriends()"><span class="fui-user"></span> Friends</a></li>
+    <!-- <li class="pull-left"><a ng-click="selectNetwork()"><span class="fui-radio-checked"></span> Network</a></li> -->
+  </ul>
+</div>
+
+<!-- <button class="btn info-button"><span class="fui-info "></span></button> -->
+
+<button class="btn btn-primary" ng-click="submit()" ng-class="classForButton()">{{submitMessage}}</button>
