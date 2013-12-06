@@ -1,0 +1,155 @@
+<nav class="navbar navbar-fixed-top" ng-controller="NavCtrl">
+  <div class="navbar-inner">
+    <div class="navbar-contents">
+      <a class="brand nav-brand" href="#/home">
+        <img src="/images/nav/ee897f79.nav-logo.png">
+        <p>{{'$' + $root.me.balanceString()}}</p>
+      </a>
+
+      <ul class="nav">
+        <li ng-controller="PendingCtrl" class="pull-left">
+          <a href="" ng-show="true" bs-popover="views/pending.html" data-title="Pending" data-placement="bottom" ng-click="clickedPendingButton()">
+              
+              <div class="btn-pending" ng-class="{actionable: actionable}">
+                <p>{{pending.length}}</p>
+              </div>
+          </a>
+
+          <div modal="pendingSentRequestModalShouldBeOpen" close="close()" options="opts">
+            <div class="modal-header modal-header-sent-request">
+              <h3>Pending Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-coming">{{currentRequest.amount && "$" || ""}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn pull-left" ng-disabled="canceling || reminding" ng-click="cancel(currentRequest)">{{cancelButtonTitle()}}</button>
+              <button class="btn btn-primary" ng-disabled="canceling || reminding" ng-click="remind(currentRequest)">{{remindButtonTitle()}}</button>
+            </div>
+          </div>
+
+          <div modal="pendingReceivedRequestModalShouldBeOpen" close="close()" options="opts">
+            <div class="modal-header modal-header-received-request">
+              <h3>Pending Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || ""}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn pull-left" ng-disabled="rejecting || paying" ng-click="reject(currentRequest)">{{rejectButtonTitle()}}</button>
+              <button class="btn btn-primary" ng-disabled="rejecting || paying" ng-click="pay(currentRequest)">{{payButtonTitle()}}</button>
+            </div>
+          </div>
+
+          <div modal="pendingReceivedGroupRequestModalShouldBeOpen" close="close()" options="opts">
+            <div class="modal-header modal-header-received-request">
+              <h3>Pending Group Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || "No Payment Tier Selected"}}{{currentRequest.amount}}</span>
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn pull-left" ng-click="rejectGroupRequest(currentRequest)">{{rejectButtonTitle()}}</button>
+              <button class="btn btn-primary" ng-click="payGroupRequest(currentRequest)">{{payButtonTitle()}}</button>
+            </div>
+          </div>
+
+          <div modal="pendingSentGroupRequestModalShouldBeOpen" close="close()" options="opts">
+            <div class="modal-header modal-header-sent-request">
+              <h3>Pending Group Request</h3>
+              <button class="close" ng-click="close()">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="pending-profile-picture" style="background-image: url('{{currentRequest.imageUrl}}')">
+              </div>
+              <p class="pending-first-line">
+                <span class="pending-title">
+                  <strong>{{currentRequest.subject}}</strong> {{currentRequest.verb}} 
+                  <strong>{{currentRequest.target}} </strong>
+                </span>
+                <!-- <span class="pending-amount pending-amount-leaving">{{currentRequest.amount && "$" || "No Payment Tier Selected"}}{{currentRequest.amount}}</span> -->
+              </p>
+              <p class="pending-description">
+                We shared {{currentRequest.directObject}}
+              </p>
+              <p>
+                We're sorry!  The ability to manage Group Requests from the web 
+                is not here yet, but coming soon.  If you have an iPhone, you can
+                manage Group Requests from our app.  Just go to 
+                <a href="https://evenly.com/#/ios-download" target="_blank">evenly.com</a> to download
+                the app!
+              </p>
+            </div>
+
+            <!-- <div class="modal-footer">
+              <button class="btn pull-left" ng-click="rejectGroupRequest(currentRequest)">Deny Request</button>
+              <button class="btn btn-primary" ng-click="payGroupRequest(currentRequest)">Pay Request</button>
+            </div> -->
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav pull-right">
+        <li ng-class="stateForItem('home')">
+          <a href="#/home">
+            <img src="/images/nav/65f77780.nav-home.png">Home
+          </a>
+        </li>
+        <li ng-class="stateForItem('wallet')">
+          <a href="#/wallet">
+            <img src="/images/nav/b8a9575a.nav-wallet.png">Wallet
+          </a>
+        </li>
+        <li ng-class="stateForItem('profile')">
+          <a href="#/profile">
+            <img src="/images/nav/f5e0e2d3.nav-profile.png">{{$root.me.firstName()}}
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

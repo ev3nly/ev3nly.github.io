@@ -1,0 +1,32 @@
+<div modal="addCardShouldBeOpen" close="hideAddCardModal()" options="addCardOpts" ng-controller="AddCardCtrl">
+  <div class="modal-header">
+    <button class="close" ng-click="hideAddCardModal()">×</button>
+    <h3>Credit or Debit Card</h3>
+  </div>
+
+  <div class="modal-body">
+    <form name="form" class="cc-form">
+      
+      <div class="control-group">
+        <input type="text" name="number" placeholder="Card Number" x-autocompletetype="cc-number" ng-model="card.number" format-card-number="" card-number="" restrict-numeric="" required="">
+      <!-- </div> -->
+
+      <!-- <div class="control-group"> -->
+        <input type="text" name="expiry" placeholder="MM/YY" x-autocompletetype="cc-exp" ng-model="card.expiry" format-card-expiry="" card-expiry="" restrict-numeric="" required="">
+
+        <input type="text" name="cvc" placeholder="CVC" pattern="\d*" x-autocompletetype="cc-csc" ng-model="card.cvc" format-card-cvc="" card-cvc="" restrict-numeric="" autocomplete="off" required="">
+      </div>
+    </form>
+
+    <div class="alert alert-error" ng-show="showErrors">
+      <p ng-show="form.number.$error.cardNumber">invalid number</p>
+      <p ng-show="form.cvc.$error.cardCVC">invalid cvc</p>
+      <p ng-show="form.expiry.$error.cardExpiry">invalid expiry</p>
+      <p ng-show="serverError">{{serverError}}</p>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="addCard()" ng-class="classForButton()">{{buttonTitle}}</button>
+  </div>
+</div>
