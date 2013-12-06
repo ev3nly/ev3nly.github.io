@@ -15051,19 +15051,18 @@ nav.splash-bottom-nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
-  width: 940px;
 }
-/* line 9, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 8, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .nav-pills > li > a {
   background-color: white;
   border-width: 0;
   color: #8f8b8b;
 }
-/* line 15, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 14, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .nav-pills > li:last-child {
   float: right;
 }
-/* line 19, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 18, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header {
   max-width: 500px;
   margin-left: auto;
@@ -15071,26 +15070,25 @@ nav.splash-bottom-nav ul li a:hover {
   text-align: center;
   padding-bottom: 20px;
 }
-/* line 26, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 25, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header .icon {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   display: inline-block;
+  margin-left: 40px;
+  margin-right: 40px;
 }
-/* line 32, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 33, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header .evenly {
-  background: url('/images/415b4339.evenly-square.png') no-repeat;
+  background: url('/images/b7fc0783.square-evenly.png') no-repeat;
   background-size: 100%;
-  width: 90px;
-  height: 90px;
-  margin-top: -20px;
+}
+/* line 37, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+.future .header .square {
+  background: url('/images/c4e00581.square.png') no-repeat;
+  background-size: 100%;
 }
 /* line 39, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
-.future .header .square {
-  background: url('/images/cd460f29.square.png') no-repeat;
-  background-size: 100%;
-}
-/* line 41, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header .plus {
   font-family: AvenirLTPro-Black !important;
   font-size: 44px;
@@ -15098,14 +15096,12 @@ nav.splash-bottom-nav ul li a:hover {
   color: #242d32;
   position: absolute;
   margin-left: -15px;
-  margin-top: 35px;
 }
-/* line 51, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 48, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header .text {
-  margin-top: -20px;
   font-size: 25px;
 }
-/* line 57, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content {
   border-bottom-style: solid;
   border-bottom-width: 0px;
@@ -15117,7 +15113,7 @@ nav.splash-bottom-nav ul li a:hover {
   background: #f9f7f6 !important;
   padding-bottom: 500px;
 }
-/* line 64, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 60, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content .text {
   max-width: 500px;
   margin-left: auto;
@@ -15125,7 +15121,7 @@ nav.splash-bottom-nav ul li a:hover {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 69, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 65, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content .text p {
   margin: 20px 0;
   text-align: justify;
@@ -15133,15 +15129,15 @@ nav.splash-bottom-nav ul li a:hover {
   color: #8f8b8b;
 }
 @media (max-width: 480px) {
-  /* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 77, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .nav {
     width: 100%;
   }
-  /* line 85, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 81, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .nav-pills > li:last-child {
     float: left;
   }
-  /* line 90, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 86, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .content .text {
     padding-left: 20px;
     padding-right: 20px;
