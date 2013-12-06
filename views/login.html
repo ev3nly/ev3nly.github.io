@@ -20,9 +20,9 @@
       </div>
       
       <button class="btn btn-primary btn-block btn-embossed" ng-click="login(email, password)" ng-class="{disabled: !validForm()}">{{buttonTitle}}</button>
-      <div class="help-block hint">No account? 
+      <!-- <div class="help-block hint">No account? 
         <a href="/#/signup">Sign up here</a>
-      </div>
+      </div> -->
 
       <div class="btn-group" ng-show="debug">
         <button class="btn" ng-repeat="serverOption in serverOptions" ng-class="{active: serverOption.name == selectedServerOption.name}" ng-click="selectServerOption(serverOption)" style="width: 83px">{{serverOption.name}}</button>

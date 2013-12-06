@@ -81,7 +81,60 @@
             </div>
           </div> -->
 
-          <div class="item active">
+          <div class="item">
+            <div class="tagline-title" ng-class="campaignClass()">
+              <h1>
+                <!-- PayPal was built for your parents, Evenly is built for you. -->
+                Money Made Easy. Share Expenses With Evenly.
+              </h1>
+            </div>
+
+            <div class="tagline-body">
+              <div class="tagline-body-text">
+                <ul>
+                  <li><p>Beautiful, intuitive experience.</p></li>
+                  <li><p>Powerful tools that make sending and collecting money a breeze.</p></li>
+                  <li><p>Share your experiences with friends.</p></li>
+                </ul>
+
+                <div class="tagline-body-buttons">
+                  
+                  <button ng-click="facebookContinue()" href="" class="btn btn-huge btn-embossed btn-social-facebook">
+                    <i class="fui-facebook"></i>
+                    Continue
+                  </button>
+
+                  <div class="bonus-ticker" ng-show="showBonusTicker">
+                    <p>Hurry!  Only</p>
+                    <p class="bonus-ticker-count">{{spotsLeft}}</p>
+                    <p>$5 bonuses left!</p>
+                  </div>
+
+                  <div class="splash-ticker" ng-show="showSplashTicker">
+                    <p>Hurry!  Only</p>
+                    <p class="splash-ticker-count">{{spotsLeft}}</p>
+                    <p>spots left!</p>
+                  </div>
+
+                  <br>
+                  <a href="">Sign up with email instead.</a>
+
+                  <button href="" class="btn btn-huge btn-embossed disabled">
+                    Coming Soon!
+                  </button>
+
+                  <div class="fb-facepile" data-href="https://www.facebook.com/getevenly" data-action="Comma separated list of action of action types" data-width="300" data-max-rows="2">
+                  </div>
+                </div>
+              </div>
+
+              <div class="iphone-hand">
+                <div class="iphone-content splash-carousel-4"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item">
             <div class="tagline-title" ng-class="campaignClass()">
               <h1>
                 We don't just help you send money, we help you collect it.
@@ -185,58 +238,7 @@
             </div>
           </div>
 
-          <div class="item">
-            <div class="tagline-title" ng-class="campaignClass()">
-              <h1>
-                <!-- PayPal was built for your parents, Evenly is built for you. -->
-                Money Made Easy. Share Expenses With Evenly.
-              </h1>
-            </div>
-
-            <div class="tagline-body">
-              <div class="tagline-body-text">
-                <ul>
-                  <li><p>Beautiful, intuitive experience.</p></li>
-                  <li><p>Powerful tools that make sending and collecting money a breeze.</p></li>
-                  <li><p>Share your experiences with friends.</p></li>
-                </ul>
-
-                <div class="tagline-body-buttons">
-                  
-                  <button ng-click="facebookContinue()" href="" class="btn btn-huge btn-embossed btn-social-facebook">
-                    <i class="fui-facebook"></i>
-                    Continue
-                  </button>
-
-                  <div class="bonus-ticker" ng-show="showBonusTicker">
-                    <p>Hurry!  Only</p>
-                    <p class="bonus-ticker-count">{{spotsLeft}}</p>
-                    <p>$5 bonuses left!</p>
-                  </div>
-
-                  <div class="splash-ticker" ng-show="showSplashTicker">
-                    <p>Hurry!  Only</p>
-                    <p class="splash-ticker-count">{{spotsLeft}}</p>
-                    <p>spots left!</p>
-                  </div>
-
-                  <br>
-                  <a href="">Sign up with email instead.</a>
-
-                  <button href="" class="btn btn-huge btn-embossed disabled">
-                    Coming Soon!
-                  </button>
-
-                  <div class="fb-facepile" data-href="https://www.facebook.com/getevenly" data-action="Comma separated list of action of action types" data-width="300" data-max-rows="2">
-                  </div>
-                </div>
-              </div>
-
-              <div class="iphone-hand">
-                <div class="iphone-content splash-carousel-4"></div>
-              </div>
-            </div>
-          </div>
+          
 
           <div class="item">
             <div class="tagline-title" ng-class="campaignClass()">
