@@ -15104,7 +15104,7 @@ nav.splash-bottom-nav ul li a:hover {
 }
 /* line 48, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .header .text {
-  font-size: 25px;
+  font-size: 40px;
 }
 /* line 53, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content {
@@ -15114,10 +15114,11 @@ nav.splash-bottom-nav ul li a:hover {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #d7d7d7;
+  padding-top: 30px;
   background: #f4f3f0 !important;
   background: #f9f7f6 !important;
 }
-/* line 60, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 61, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content .text {
   max-width: 500px;
   margin-left: auto;
@@ -15125,37 +15126,37 @@ nav.splash-bottom-nav ul li a:hover {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 65, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 66, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future .content .text p {
   margin: 20px 0;
   text-align: justify;
   line-height: 25px;
   color: #8f8b8b;
 }
-/* line 75, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 76, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 html {
   background: #f9f7f6;
 }
-/* line 79, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 80, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .container {
   background: #f9f7f6;
 }
-/* line 83, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+/* line 84, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
 .future-bottom-nav {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 @media (max-width: 480px) {
-  /* line 91, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 92, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .nav {
     width: 100%;
   }
-  /* line 95, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 96, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .nav-pills > li:last-child {
     float: left;
   }
-  /* line 100, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
+  /* line 101, /Users/seansu4you87/Desktop/evenly-web/app/styles/future.less */
   .future .content .text {
     padding-left: 20px;
     padding-right: 20px;
